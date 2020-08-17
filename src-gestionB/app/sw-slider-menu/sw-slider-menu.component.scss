@@ -1,0 +1,64 @@
+
+.fav-section {
+    width: 90%;
+    max-width: 90%;
+    height: 120px;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box;
+    border-top: 1px solid gainsboro;
+}
+.fav-section-separator {
+    height: 1px;
+    width: 80%;
+    border-top: 1px solid gainsboro;
+}
+.fav-container {
+    border-radius: 4px;
+    box-sizing: border-box;
+    height: 85px;
+    margin-bottom: 12px;
+    opacity: 1;
+    position: relative;
+    transition-property: background, background-color, border-color, box-shadow, opacity, filter;
+    width: 112px;
+    padding: 20px 5px 10px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+.fav-icon {
+    height: 100%;
+    width: 100%;
+    font-size: 15px;
+    line-height: 22px;
+    opacity: 0.8;
+}
+.fav-title {
+    color: #000;
+    font-family: 'Roboto', arial, sans-serif;
+    font-size: 12px ;
+    font-weight: 500;
+    max-height: 28px;
+    overflow: hidden;
+    text-align: center;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    width: 100px;
+}
+.fav-container:hover {
+    border: 1px solid rgb(49, 49, 123);
+}
+.icon-blue {
+    color: blue;
+}
+.icon-green {
+    color: green;
+}
+.icon-red {
+    color: rgb(159, 11, 11);
+}

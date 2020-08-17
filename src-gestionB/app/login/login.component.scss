@@ -1,0 +1,153 @@
+
+
+@import '../../_variables';
+* {box-sizing: border-box;}
+.page-container {
+    width: 100%;
+    height: calc( 100vh - $navbar-height );
+    min-width: 320px;
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.login-box {
+    margin: 100px auto;
+    width: 500px;
+    height: 380px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    border: 3px solid $modal-color;
+    border-radius: 3px;
+}
+// .login-button {
+//     width: 200px;
+//     height: 45px;
+//     border-radius: 4px;
+//     font-size: 16px;
+//     font-weight: 500;
+    
+//     background-color: rgb(255, 115, 0)(255, 115, 0);
+//     color: #000;
+// }
+.header {
+    width: 100%;
+    height: 100px;    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: $modal-color;
+    color: #fff;
+    h2 {
+        width: 100%;
+        text-align: left;
+        margin-left: 25px;
+        color: #000;
+    }
+    img {
+        margin-left: 15px;
+    }
+}
+.body {
+    width: 100%;
+    height: 100%;    
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    background-color: #fff;
+    padding: 30px 20px 10px 20px;
+    .mat-form-field {
+        width: 300px;
+    }
+    .mat-raised-button {
+        margin-top: 10px;
+        width: 225px;
+    }
+
+}
+.footer {
+    width: 100%;
+    height: 40px;    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: $modal-color;
+    color: #fff;
+}
+
+
+@media screen and (max-width: 600px){
+    .login-box {
+        margin: none;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-start;
+        border: none;
+        border-radius: 0px;
+    }
+    
+    .header {
+        width: 100%;
+        height: 80px;    
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: $modal-color;
+        color: #fff;
+        h2 {
+            width: 100%;
+            text-align: left;
+            margin-left: 25px;
+        }
+    }
+    .body {
+        width: 100%;
+        height: 100%;    
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
+        background-color: #fff;
+        padding: 20px 0px;
+        
+    }
+    .login-form {
+        width: 100%;
+        padding: 25px;
+        .mat-form-field {
+            width: 100%;
+        }
+
+    }
+    .mat-raised-button {
+        margin-top: 10px;
+        width: 100%;
+        height: 45px;
+    }   
+    .footer {
+        width: 100%;
+        height: 40px;    
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: $modal-color;
+        color: #fff;
+    }
+}
+
+@media screen and (max-width: 350px){
+    .login-form {
+        width: 100%;
+        padding: 10px 15px;
+        .mat-form-field {
+            width: 100%;
+        }
+
+    }
+}

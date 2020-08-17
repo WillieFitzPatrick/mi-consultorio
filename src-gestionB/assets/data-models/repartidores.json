@@ -1,0 +1,14 @@
+{
+   "title": "Repartidores",
+   "searchPlaceholder": "Buscar ...",
+   "searchcolumn": "descrip",
+   "displayedColumns": [ "Id", "sucursal.descrip", "descrip", "comision", "activo"],
+   "displayedColumnsXS": [ "descrip", "activo"],
+   "columns": [
+      {"caption": "Id", "data": "Id", "class": "id-column", "pipe": "none"},
+      {"caption": "Sucursal", "data": "sucursal.descrip", "class": "descrip-column", "pipe": "object"},
+      {"caption": "Descripcion", "data": "descrip", "class": "descrip-column", "pipe": "none"},
+      {"caption": "Comision", "data": "comision", "class": "number-column", "pipe": "none"},
+      {"caption": "Activo", "data": "activo", "class": "activo-column", "pipe": "SiNo"}
+   ]
+}

@@ -1,0 +1,13 @@
+{
+   "title": "Presentaciones",
+   "searchPlaceholder": "Buscar ...",
+   "searchcolumn": "descrip",
+   "displayedColumns": [ "Id", "descrip", "factor", "activo"],
+   "displayedColumnsXS": [ "descrip", "activo"],
+   "columns": [
+      {"caption": "Id", "data": "Id", "class": "id-column", "pipe": "none"},
+      {"caption": "Descripcion", "data": "descrip", "class": "descrip-column", "pipe": "none"},
+      {"caption": "Unidades Bulto", "data": "factor", "class": "number-column", "pipe": "none"},
+      {"caption": "Activo", "data": "activo", "class": "activo-column", "pipe": "SiNo"}
+   ]
+}

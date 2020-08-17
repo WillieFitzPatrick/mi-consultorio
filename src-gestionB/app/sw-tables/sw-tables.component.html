@@ -1,0 +1,90 @@
+
+<div class="top-container mat-elevation-z8">
+
+
+   <div [hidden]="showForm">
+      <div fxLayout="row">
+         <div fxFlex fxLayoutAlign="flex-start center">
+            <!-- <i class="fa fa-arrow-left menu-return-button" (click)="f_closeForm()"></i> -->
+            <span class="title">{{tableDescription}}</span>
+         </div>
+         <!-- <div class="search-container"> -->
+         <div fxFlex fxLayoutAlign="center center">
+            <mat-form-field [style.display]="f_isLoadingData() ? 'none' : ''">
+               <input matInput #filter [placeholder]="tableDefinition?.searchPlaceholder">
+            </mat-form-field>
+         </div>
+         <div fxFlex fxLayoutAlign="flex-end center" style="margin-right: 15px;">
+            <div *ngIf="!f_isLoadingData()">
+               <button appSwFloatRight mat-mini-fab color="primary" (click)="f_newForm()" style="margin-left: 6px;">
+                  <i class="fa fa-plus"></i>
+               </button>
+               <button appSwFloatRight mat-mini-fab color="primary" (click)="f_editForm()" style="margin-left: 6px;">
+                  <i class="fa fa-edit"></i>
+               </button>
+               <button appSwFloatRight mat-mini-fab color="primary" (click)="f_copyForm()" style="margin-left: 6px;">
+                  <i class="fa fa-copy"></i>
+               </button>
+               <button mat-mini-fab class="close-button" (click)="f_closeForm()" style="margin-left: 15px;">
+                  <i class="fa fa-times"></i>
+               </button>               
+            </div>
+         </div>
+      </div>
+
+
+
+      <mat-table #table [dataSource]="dataSource" matSort>
+
+         <ng-container *ngFor="let column of tableDefinition?.columns">
+            <ng-container cdkColumnDef={{column.data}}>
+               <mat-header-cell *cdkHeaderCellDef mat-sort-header ngClass={{column.class}}> {{ column.caption }}</mat-header-cell>
+
+               <ng-container [ngSwitch]="column.pipe">
+
+
+                  <ng-container *ngSwitchCase="'none'">
+                     <mat-cell *cdkCellDef="let row" ngClass={{column.class}}> {{row[column.data]}}</mat-cell>
+                  </ng-container>
+
+                  <ng-container *ngSwitchCase="'object'">
+                     <mat-cell *cdkCellDef="let row" ngClass={{column.class}}> {{row[ column.data.split(".")[0]][column.data.split(".")[1]]}}</mat-cell>
+                  </ng-container>
+
+                  <ng-container *ngSwitchCase="'SiNo'">
+                     <mat-cell *cdkCellDef="let row" ngClass={{column.class}}> {{row[column.data] | sino}}</mat-cell>
+                  </ng-container>
+
+               </ng-container>
+            </ng-container>
+         </ng-container>
+
+         <mat-header-row *cdkHeaderRowDef="displayedColumns"></mat-header-row>
+         <mat-row *cdkRowDef="let row; columns: displayedColumns;" [class.example-selected-row]="selection.isSelected(row.Id)" (click)="selection.clear();selection.toggle(row.Id)">
+         </mat-row>
+      </mat-table>
+      <div *ngIf="f_isLoadingData()" style="text-align: center;font-size: 20px; color: green;">
+         Aguarde mientras se cargan los datos.
+         <i class="fa fa-spinner fa-spin fa-2x"></i>
+      </div>
+      <div *ngIf="!f_isLoadingData()">
+         <div class="example-no-results" [style.display]="dataSource?.renderedData.length == 0 ? '' : 'none'">
+            No se encontraron registros para el filtro ingresado.
+         </div>
+      </div>
+
+      <mat-paginator [style.display]="f_isLoadingData() ? 'none' : ''" #paginator [length]="dataSource?.filteredData.length" [pageIndex]="0"
+         [pageSize]="25" [pageSizeOptions]="[5, 10, 25, 100]">
+      </mat-paginator>
+   </div>
+
+   <div *ngIf="showForm">
+      <div style="margin-left: 50px;">
+
+         <sw-form [table]="_table" [tableDescription]="tableDescription" [tableFilter]="oFilter" [data]="rowData" [formMode]="formMode"
+            (guardar)="f_guardar( $event )" (cancelar)="f_cancelar()" (eliminar)="f_eliminar()">
+         </sw-form>
+      </div>
+   </div>
+
+</div>

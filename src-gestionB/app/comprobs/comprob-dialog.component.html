@@ -1,0 +1,43 @@
+<div fxLayout="row">
+   <div fxFlex="25">
+
+   </div>
+   <div fxFlex>
+      <mat-card>
+         <mat-card-title color="primary">
+            {{comprob.tpcomprob.descrip}} 
+            <span appSwFloatRight># {{('0000'+comprob.ptovta).slice(-4)}}-{{('00000000'+comprob.numero).slice(-8)}}</span>
+         </mat-card-title>
+         <mat-card-content>
+            <!-- {{comprob | json}} -->
+            Fecha : {{comprob.fecha | date:'dd/MM/yyyy'}}
+            <br>
+            Fecha Registro : {{comprob.fechareg | date:'dd/MM/yyyy HH:mm'}} 
+            <br>
+            Deposito : {{comprob.deposito.descrip}} 
+            <br>
+            Persona : {{comprob.persona.descrip}} {{comprob.persona.cuit}}
+            <br>
+            <br>
+            Items
+            <hr> 
+            {{comprob.detalle.length}}
+            {{comprob.detalle | json}}
+            <hr> 
+            <div *ngFor="let item of comprob.detalle">
+               {{item.producto.descrip}}
+               {{item.cantidad}}
+               {{item.neto}}
+            </div>
+            <hr> 
+            <span appSwFloatRight>$ {{comprob.total | number: '1.2-2' }}</span>
+         </mat-card-content>
+         <mat-card-actions>
+            <button mat-button (click)="closeForm()">Cerrar</button>
+         </mat-card-actions>
+      </mat-card>
+   </div>
+   <div fxFlex="25">
+
+   </div>
+</div>

@@ -1,0 +1,94 @@
+<!-- <h2>Panel de Control</h2> -->
+<div class="dashboard-container">
+   <div fxLayout="column" >
+      <div fxFlex>
+         <div fxLayout="row" >
+            <div fxFlex="48" >
+            
+               <div style="width: 90%;text-align: start">
+                  <canvas
+                        baseChart
+                        chartType="line"
+                        [datasets]="chartData"
+                        [labels]="chartLabels"
+                        [options]="chartOptions"
+                        [legend]="true"
+                        (chartClick)="onChartClick($event)">
+                  </canvas>
+               </div>            
+            </div>   
+            <div fxFlex="48" >
+               <div style="width: 90%;text-align: end">
+                  <canvas
+                     baseChart
+                     chartType="pie"
+                     [datasets]="chartDataPie"
+                     [labels]="chartLabelsPie"
+                     [options]="chartOptionsPie"
+                     [legend]="true"
+                     (chartClick)="onPieClick($event)">
+                  </canvas>
+               </div>            
+            </div>   
+         </div>   
+      </div>   
+      <div fxFlex>
+            <div fxLayout="row" fxLayoutAlign="space-around end">
+
+                  <div fxFlex="23">
+                     <mat-card class="dashboard-card-title mat-elevation-z5">
+                        <mat-card-title>
+                           Stock
+                        </mat-card-title>
+                     </mat-card>
+                     <mat-card class="dashboard-card">
+                        <mat-card-content>
+                           <app-dashboard-stock></app-dashboard-stock>
+                        </mat-card-content>
+                     </mat-card>
+                  </div>
+            
+                  <div fxFlex="23">
+                     <mat-card class="dashboard-card-title mat-elevation-z5">
+                        <mat-card-title>
+                              Repartidores
+                        </mat-card-title>
+                     </mat-card>
+                     <mat-card class="dashboard-card">
+                        <mat-card-content>
+                           <app-dashboard-repartidores></app-dashboard-repartidores>
+                        </mat-card-content>
+                     </mat-card>
+                  </div>
+            
+                  <div fxFlex="23">
+                     <mat-card class="dashboard-card-title mat-elevation-z5">
+                        <mat-card-title>
+                              Clientes
+                        </mat-card-title>
+                     </mat-card>
+                     <mat-card class="dashboard-card">
+                        <mat-card-content>
+                           <app-dashboard-clientes></app-dashboard-clientes>
+                        </mat-card-content>
+                     </mat-card>
+                  </div>
+            
+                  <div fxFlex="23">
+                     <mat-card class="dashboard-card-title mat-elevation-z5">
+                        <mat-card-title>
+                              Cuenta Corriente
+                        </mat-card-title>
+                     </mat-card>
+                     <mat-card class="dashboard-card">
+                        <mat-card-content>
+                           Cuenta Corriente
+                        </mat-card-content>
+                     </mat-card>
+                  </div>
+            
+               </div>
+      </div>   
+   </div>   
+
+</div>

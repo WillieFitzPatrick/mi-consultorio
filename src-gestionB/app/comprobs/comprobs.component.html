@@ -1,0 +1,132 @@
+<div class="comprobs-main">
+   <div class="comprobs-container">
+
+      <div *ngIf="httpError" style="color:red; font-size: 16px;">
+         Error : {{httpError | json}}
+      </div>
+
+      <div *ngIf="!showForm && !showDialog" class="comprobs-list-outer-container">
+
+         <div *ngIf="!tpcomprob || !comprobs">
+            <app-sw-waiting-fs waitingMessage=" Cargando datos de comprobantes ...">
+            </app-sw-waiting-fs>
+         </div>
+
+         <div fxLayout="top-row" *ngIf="comprobs">
+            <div class="title" fxFlex fxLayoutAlign="start center">
+               {{title}}
+            </div>
+            <div fxFlex>
+               <div fxFlex fxLayoutAlign="end center" style="margin-right: 15px;">
+                  <button mat-mini-fab (click)="addComprob(tpcomprob)" color="primary" class="button24">
+                     <mat-icon class="icon24"><i class="fa fa-plus"></i></mat-icon>
+                  </button>
+                  <button mat-mini-fab (click)="editComprob(tpcomprob)" color="primary" style="margin-left: 6px;">
+                     <i class="fa fa-pencil"></i>
+                  </button>
+                  <button mat-mini-fab (click)="editComprob(tpcomprob)" color="primary" style="margin-left: 6px;">
+                     <i class="fa fa-copy"></i>
+                  </button>
+                  <button mat-mini-fab (click)="editComprob(tpcomprob)" color="primary" style="margin-left: 6px;">
+                     <i class="fa fa-print"></i>
+                  </button>
+                  <button mat-mini-fab class="close-button" (click)="f_closeComprobs()" style="margin-left: 15px;">
+                     <i class="fa fa-times"></i>
+                  </button>
+               </div>
+            </div>
+         </div>
+
+         <div *ngIf="comprobs" class="comprobs-title-container">
+            <hr>
+            <div fxLayout="row">
+               <div fxFlex="2"></div>
+               <!-- <div fxFlex="3">Id </div> -->
+               <div fxFlex="8"> Fecha </div>
+               <!-- <div fxFlex="10"> Registro </div> -->
+               <div fxFlex="10"> Numero </div>
+               <div fxFlex="15" *ngIf="tpcomprob.pideDeposito">Deposito</div>
+               <div fxFlex="15" *ngIf="tpcomprob.pideProveedor">Proveedor</div>
+               <div fxFlex="15" *ngIf="tpcomprob.pideCliente">Cliente</div>
+               <div fxFlex="15" *ngIf="tpcomprob.pideRepartidor">Repartidor</div>
+               <!-- <div fxFlex="10"*ngIf="tpcomprob.pideCliente || tpcomprob.pideProveedor"> Cuit </div> -->
+               <div fxFlex="15" style="text-align: end;"> Total </div>
+               <!-- <div fxFlex="1"></div> -->
+            </div>
+            <!-- <hr> -->
+         </div>
+
+         <div *ngIf="comprobs" class="comprobs-list-container">
+            <div fxLayout="row" *ngFor="let comprob of comprobs; let i = index;" (click)="selectComprob(comprob, i)"
+               [class.selectedRowClass]="i == selectedIndex" [class.notSelectedRowClass]="i != selectedIndex">
+               <div fxFlex="2">
+                  <!-- <span *ngIf="comprob.Id == selectedId">
+                  <i class="fa fa-check" style="color: green"></i>
+               </span> -->
+               </div>
+               <!-- <div fxFlex="3">
+               {{comprob.Id}}
+            </div> -->
+               <div fxFlex="8">
+                  <div fxLayout="column">
+                     <span>{{comprob.fecha | date:'dd/MM/yyyy'}}</span>
+                     <span><small>a las {{comprob.fechareg | date:'HH:mm'}}</small></span>
+                  </div>
+               </div>
+               <!-- <div fxFlex="10">
+               {{comprob.fechareg | date:'dd/MM/yyyy HH:mm'}}
+            </div> -->
+               <div fxFlex="10">
+                  <div fxLayout="column">
+                     <span>{{('0000'+comprob.ptovta).slice(-4)}}-{{('00000000'+comprob.numero).slice(-8)}}</span>
+                     <span> <small># : {{comprob.Id}}</small></span>
+                  </div>
+               </div>
+               <div fxFlex="15" *ngIf="tpcomprob.pideDeposito">
+                  {{comprob.deposito?.descrip}}
+               </div>
+
+               <div fxFlex="20" *ngIf="tpcomprob.pideRepartidor">
+                  {{comprob.repartidor?.descrip}}
+               </div>
+               <!-- <div fxFlex="10" *ngIf="tpcomprob.pideRepartidor">
+               {{comprob.repartidor?.cuit}}
+            </div> -->
+               <div fxFlex="20" *ngIf="tpcomprob.pideCliente || tpcomprob.pideProveedor">
+                  <div fxLayout="column">
+                     <span>{{comprob.persona?.descrip}}</span>
+                     <span><small>{{comprob.persona?.cuit}}</small></span>
+                  </div>
+               </div>
+               <!-- <div fxFlex="10" *ngIf="tpcomprob.pideCliente || tpcomprob.pideProveedor">
+               {{comprob.persona?.cuit}}
+            </div> -->
+
+
+               <div fxFlex="15" style="text-align: end;">
+                  $ {{comprob.total | number: '1.2-2' }}
+               </div>
+               <!-- <div fxFlex="1">
+            </div> -->
+            </div>
+         </div>
+
+
+      </div>
+
+      <div *ngIf="showForm">
+         <app-comprobsdet [Id]="selectedId" [tpcomprob]="_tpcomprob" (close)="closeComprobdet()">
+
+         </app-comprobsdet>
+
+      </div>
+      <div *ngIf="showDialog">
+         <app-comprob-dialog [comprob]="selectedComprob" (close)="closeComprobDialog()">
+
+         </app-comprob-dialog>
+
+      </div>
+
+
+   </div>
+</div>

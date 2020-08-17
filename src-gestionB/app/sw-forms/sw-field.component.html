@@ -1,0 +1,76 @@
+<div [formGroup]="form">
+   <div *ngIf="!field.hidden">
+   <div [ngSwitch]="field.controlType">
+
+      <div *ngSwitchCase="'textfield'">
+         <mat-form-field class="full-width">
+            <span matPrefix style="color: red" *ngIf="field.required">* &nbsp;</span>
+            <input matInput [formControlName]="field.key" [placeholder]="field.label" type="text">
+            <mat-error *ngIf="hasError('required')">
+               Debe ingresar este dato para completar el formulario.
+            </mat-error>
+            <mat-error *ngIf="hasError('pattern')">
+               El texto ingresado no es correcto.
+            </mat-error>
+         </mat-form-field>
+      </div>
+
+      <div *ngSwitchCase="'datefield'">
+         <mat-form-field class="date-width">
+            <span matPrefix style="color: red" *ngIf="field.required">* &nbsp;</span>
+            <input matInput [formControlName]="field.key" [placeholder]="field.label" type="date">
+            <mat-error *ngIf="hasError('required')">
+               Debe ingresar este dato para completar el formulario.
+            </mat-error>
+         </mat-form-field>
+      </div>
+
+      <div *ngSwitchCase="'numberfield'">
+         <mat-form-field class="number-width">
+            <span matPrefix style="color: red" *ngIf="field.required">* &nbsp;</span>
+            <input matInput [formControlName]="field.key" [placeholder]="field.label" type="number" step="any" style="text-align: right;">
+            <mat-error *ngIf="hasError('required')">
+               Debe ingresar este dato para completar el formulario.
+            </mat-error>
+            <mat-error *ngIf="hasError('min')">
+               El valor minimo permitido es
+               <strong>{{field.min}}</strong>
+            </mat-error>
+            <mat-error *ngIf="hasError('max')">
+               El valor maximo permitido es
+               <strong>{{field.max}}</strong>
+            </mat-error>
+         </mat-form-field>
+      </div>
+
+      <div *ngSwitchCase="'autocompletefield'">
+         <div class="autocomplete-width">
+
+            <!-- <sw-autocomplete [data]="form.value[field.key]" [config]="field" [debug]="true" (optionSelected)="optionSelected($event)">
+
+            </sw-autocomplete> -->
+            <app-sw-modal-autocomplete 
+               [initialValue]='form.value[field.key]'
+               [placeholder]='field.label'
+               [showProp]='field.data.show'
+               [title]='field.key'
+               [apiCall]='field.autocomplete_query' 
+               [debug]='false'
+               (optionSelected)="optionSelected($event)"
+               (optionDeleted)="optionSelected(null)">
+            </app-sw-modal-autocomplete>
+
+         </div>
+
+      </div>
+
+      <div *ngSwitchCase="'booleanfield'">
+         <div class="boolean-width">
+            <span matPrefix style="color: red" *ngIf="field.required">* &nbsp;</span>
+            <span style="margin-right: 20px;">{{field.label}}</span>
+            <mat-slide-toggle [formControlName]="field.key"></mat-slide-toggle>
+         </div>
+      </div>
+   </div>
+   </div>
+</div>

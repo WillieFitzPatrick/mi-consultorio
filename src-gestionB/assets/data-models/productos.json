@@ -1,0 +1,15 @@
+{
+   "title": "Productos",
+   "searchPlaceholder": "Buscar ...",
+   "searchcolumn": "descrip",
+   "displayedColumns": [ "Id","marca.descrip","rubro.descrip","descrip","presentacion.descrip", "activo"],
+   "displayedColumnsXS": [ "descrip", "activo"],
+   "columns": [
+      {"caption": "Id", "data": "Id", "class": "id-column", "pipe": "none"},
+      {"caption": "Marca", "data": "marca.descrip", "class": "descrip-column", "pipe": "object"},
+      {"caption": "Rubro", "data": "rubro.descrip", "class": "descrip-column", "pipe": "object"},
+      {"caption": "Descripcion", "data": "descrip", "class": "descrip-column", "pipe": "none"},
+      {"caption": "Presentacion", "data": "presentacion.descrip", "class": "descrip-column", "pipe": "object"},
+      {"caption": "Activo", "data": "activo", "class": "activo-column", "pipe": "SiNo"}
+   ]
+}

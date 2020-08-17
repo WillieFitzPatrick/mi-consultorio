@@ -1,0 +1,115 @@
+.comprobs-main {
+   font: 200 14px/1.5 Helvetica, Verdana, sans-serif;
+   height: calc( 100vh - 65px);
+   // border: 1px solid green;
+   background-color: #f1f5f8;
+   padding: 5px;
+   box-sizing: border-box;
+   
+}
+.comprobs-container {
+   font: 200 14px/1.5 Helvetica, Verdana, sans-serif;
+   height: 100%;
+   display: flex;
+   flex-direction: column;
+}
+
+.comprobs-list-outer-container{
+   height: 100%;
+}
+   
+.top-row {
+   height: 43px;
+   display: flex;
+   align-items: center;
+}
+.comprobs-title-container{
+   height: 40px;
+   margin-top: 5px;
+   font-weight: bold;
+}
+.comprobs-list-container{
+   height: calc( 100vh - 176px );
+   width: 100%;
+   overflow: auto;
+}
+
+.buttons-container{
+   position: relative;
+   text-align: center;
+   bottom: 0px;
+   height: 60px;
+   padding: 10px;
+}
+
+// .button24 {
+//    margin-left: 6px;
+//    width: 24px;
+//    height: 24px;
+// }
+// .icon24 {
+//    font-size: 16px;
+//    margin-top: -8px;
+//  }
+.title {
+   font-size: 20px;
+   line-height: 40px;
+   text-align: left;   
+   margin-left: 20px; 
+   vertical-align: center;
+ }
+
+
+.close-button{
+   background-color: #fff;
+   color: #000;
+   &:hover {
+      background-color: rgb(241, 88, 88);
+      color: #fff;
+   }
+}
+// .close-button{
+//    border: 2px solid rgb(50, 49, 49);
+//    // background-color: rgb(50, 49, 49);
+//    background-color: #fff;
+//    border-radius: 50%;
+//    width: 40px;
+//    height: 40px;
+//    cursor: pointer;
+//    box-shadow: 0px 3px 5px -1px rgba(0, 0, 0, 0.2), 0px 6px 10px 0px rgba(0, 0, 0, 0.14), 0px 1px 18px 0px rgba(0, 0, 0, 0.12);
+
+//    &:hover {
+//       background-color: rgb(240, 140, 140);
+//    }
+//    &:after {
+//       content: "\d7";
+//       color: rgb(50, 49, 49);;
+//       font-size: 2em;
+//    }
+// }
+
+
+ .selectedRowClass{
+   font: 200 14px/1.5 Helvetica, Verdana, sans-serif;
+   border-bottom: 1px solid #ccc;           
+   /* font-size: 18px; */
+   background: #f6f6f6;
+   padding: 2px;
+ }
+
+ .notSelectedRowClass {
+   font: 200 14px/1.5 Helvetica, Verdana, sans-serif;
+   border-bottom: 1px solid #ccc;
+   background-color: white;
+   padding: 2px;
+}
+
+.selectedRowClass:first-child {
+   border-top: 1px solid lightgray;
+ }
+ .notSelectedRowClass:first-child {
+   border-top: 1px solid lightgray;
+ }
+ .notSelectedRowClass:last-child {
+   border-bottom: 0px solid lightgray;
+ }

@@ -1,0 +1,53 @@
+<div class="page-container">
+    <div class="login-box">
+        <div class="header">
+            <img src="assets/gestionb-logo.png" width=35px height=50px>
+            <h2>gestiónB - Login</h2>
+        </div>
+        <div class="body">
+            <form class="login-form" [formGroup]="form" novalidate>
+
+                <!-- userDomain -->
+                <div class="form-field">
+                    <mat-form-field>
+                        <input matInput formControlName="userGroup" placeholder="Grupo" type="text">
+                        <mat-error>
+                            <span *ngIf="!userGroup.valid && userGroup.touched">
+                                Ingrese el grupo al cual desea conectarse.
+                            </span>
+                        </mat-error>
+                    </mat-form-field>
+                </div>
+
+                <!-- userName -->
+                <div class="form-field">
+                    <mat-form-field>
+                        <input matInput formControlName="userName" placeholder="Usuario (email)" type="text">
+                        <mat-error>
+                            <span *ngIf="!userName.valid && userName.touched">
+                                Ingrese el usuario ( email ).
+                            </span>
+                        </mat-error>
+                    </mat-form-field>
+                </div>
+
+                <!-- userPassword -->
+                <div class="form-field">
+                    <mat-form-field>
+                        <input matInput formControlName="userPassword" placeholder="Password" type="password">
+                        <mat-error>
+                            <span *ngIf="!userPassword.valid && userPassword.touched">
+                                Ingrese el password del usuario.
+                            </span>
+                        </mat-error>
+                    </mat-form-field>
+                </div>
+            </form>
+            <button mat-raised-button color="warn" (click)="onLogin()" [disabled]="!form.valid || onLoginProcess">
+                Ingresar 
+                <i class="fa fa-spinner fa-spin" *ngIf="onLoginProcess"></i>
+                <i class="fa fa-sign-in" *ngIf="!onLoginProcess"></i>
+            </button>
+        </div>
+    </div>
+</div>

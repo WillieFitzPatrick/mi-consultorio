@@ -1,0 +1,25 @@
+h2 {
+   font: 400 30px/1.5 Helvetica, Verdana, sans-serif;
+   margin: 0;
+   padding: 0;
+}
+.dashboard-container {
+   /* border: 1px solid black; */
+   height: 700px; 
+   min-height: 700px;
+   padding-top: 10px;
+}
+.dashboard-card {
+   margin-top: 5px;
+   height: 250px;
+   min-height: 200px;
+   max-height: 250px;
+   overflow: auto;
+}
+.dashboard-card-title{
+   margin-top: 20px;
+   height: 25px;
+   min-height: 25px;
+   max-height: 25px;
+   overflow: ellipsis;
+}

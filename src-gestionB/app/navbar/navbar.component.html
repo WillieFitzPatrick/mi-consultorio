@@ -1,0 +1,23 @@
+<mat-toolbar color="accent" *ngIf="user.Status !== ''">
+    <span><img src="assets/gestionb-logo.png" width=35px height=50px (click)="gotoHome()"></span>
+    <span class="navbar-title">gestiónB</span>
+
+    <div class="navbar-buttons" cdkDropList (cdkDropListDropped)="drop($event)">
+      <!-- <button mat-button (click)="menuClick('pedidos')" cdkDrag>Cotizaciones</button>
+      <button mat-button (click)="menuClick()" cdkDrag>Pedidos</button>
+      <button mat-button (click)="menuClick()" disabled>Remitos</button>
+      <button mat-button (click)="menuClick()" disabled>Facturas</button> -->
+
+      <button class="navbar-button" mat-button *ngFor="let option of options" cdkDrag (click)="menuClick('pedidos')">{{option}}</button>
+    </div>
+
+
+    <span class="navbar-separator"></span>
+    <i class="fa fa-bell navbar-icon alert"></i>
+    <i class="far fa-user navbar-icon user-icon"></i>
+    <i class="fas fa-bars menu-icon"></i>
+    <div class="user-container">
+      <div class="navbar-name"><span>{{user.Name}}</span></div>
+      <div class="navbar-group">{{user.Group}}</div>
+    </div>
+ </mat-toolbar>

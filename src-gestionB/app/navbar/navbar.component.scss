@@ -1,0 +1,119 @@
+@import '../../variables';
+
+.navbar-title {
+    margin-left: 10px;
+    font-size: 18px;
+    line-height: 26px;
+    padding-right: 20px;
+    opacity: 0.8;
+    border-right: 2px solid $border-color;
+}
+.navbar-buttons {
+    margin-left: 20px;
+    font-size: 15px;
+    line-height: 22px;
+    .navbar-button {
+        opacity: 0.6;
+        width: 110px;
+        &:hover {
+            opacity: 0.9;
+        }
+    }
+}
+.navbar-separator {
+    flex: 1 1 auto;
+}
+.navbar-icon {
+    margin-right: 20px;
+    &.alert {
+       color: green;
+    }
+}
+.user-icon {
+    display: none;
+}
+.menu-icon {
+    display: none;
+}
+ 
+.user-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-right: 10px;
+    .navbar-name {
+       font-size: 12px; 
+       font-weight: normal;
+       line-height: 15px;
+        display: flex;
+        align-items: flex-end;  
+    }
+        .navbar-group {
+        font-size: 12px; 
+        font-weight: bold;
+        opacity: 0.8;
+        line-height: 18px;
+    }
+}
+
+.cdk-drag-preview {
+    box-sizing: border-box;
+    border-radius: 4px;
+    box-shadow: 0 5px 5px -3px rgba(0, 0, 0, 0.2),
+                0 8px 10px 1px rgba(0, 0, 0, 0.14),
+                0 3px 14px 2px rgba(0, 0, 0, 0.12);
+}
+
+.cdk-drag-placeholder {
+    opacity: 0;
+}
+
+.cdk-drag-animating {
+    transition: transform 250ms cubic-bezier(0, 0, 0.2, 1);
+}
+
+.example-box:last-child {
+    border: none;
+}
+
+.navbar-buttons.cdk-drop-list-dragging .navbar-button:not(.cdk-drag-placeholder) {
+    transition: transform 250ms cubic-bezier(0, 0, 0.2, 1);
+}
+
+
+@media screen and (max-width: 1004px) {
+    .navbar-title {
+        display: none;
+    }
+    .navbar-buttons {
+        margin-left: 10px;
+        button {
+            width: 100px;
+        }
+    }
+}
+@media screen and (max-width: 768px) {
+    .user-container {
+        display: none;
+    }
+    .user-icon {
+        display: inline-block;
+    }
+}
+@media screen and (max-width: 600px) {
+    .navbar-buttons {
+        display:none;
+    }
+    .menu-icon {
+        display: inline-block;
+    }
+    .navbar-title {
+        display: inline-block;
+        margin-left: 10px;
+        font-size: 18px;
+        line-height: 22px;
+        opacity: 0.8;
+        border-right: none;
+    }
+}

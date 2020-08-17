@@ -1,0 +1,18 @@
+{
+   "title": "Tipos de Comprobantes",
+   "searchPlaceholder": "Buscar ...",
+   "searchcolumn": "descrip",
+   "displayedColumns": [ "Id", "descrip", "sor", "nroaut", "pideProveedor", "pideCliente", "pideDeposito", "pideRepartidor", "activo"],
+   "displayedColumnsXS": [ "descrip", "activo"],
+   "columns": [
+      {"caption": "Id", "data": "Id", "class": "id-column", "pipe": "none"},
+      {"caption": "Descripcion", "data": "descrip", "class": "descrip-column", "pipe": "none"},
+      {"caption": "S o R", "data": "sor", "class": "number-column", "pipe": "none"},
+      {"caption": "Nro Aut", "data": "nroaut", "class": "activo-column", "pipe": "SiNo"},
+      {"caption": "Proveedor", "data": "pideProveedor", "class": "activo-column", "pipe": "SiNo"},
+      {"caption": "Cliente", "data": "pideCliente", "class": "activo-column", "pipe": "SiNo"},
+      {"caption": "Deposito", "data": "pideDeposito", "class": "activo-column", "pipe": "SiNo"},
+      {"caption": "Repartidor", "data": "pideRepartidor", "class": "activo-column", "pipe": "SiNo"},
+      {"caption": "Activo", "data": "activo", "class": "activo-column", "pipe": "SiNo"}
+   ]
+}

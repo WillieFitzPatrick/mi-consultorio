@@ -1,0 +1,155 @@
+<div *ngIf="!listProductsVisible">
+   <div *ngIf="loadingComprob">
+      <app-sw-waiting-fs 
+         waitingMessage=" Buscando comprobante ...">
+      </app-sw-waiting-fs>
+   </div>
+   <mat-card>
+      <mat-card-title>
+         <div fxLayout="row">
+            <div fxFlex="80">
+               {{accion}} Comprobante : {{tpcomprob?.descrip}}
+            </div>
+            <div fxFlex="20" fxLayoutAlign="end">
+               <i class="fa fa-times menu-return-button" (click)="closeForm()"></i>
+            </div>
+         </div>
+      </mat-card-title>
+
+      <mat-card-content>
+         <form [formGroup]="cForm">
+            <div fxLayout="row">
+
+               <div fxFlex="50" class="con-borde alt120">
+                  <div *ngIf="tpcomprob.pideProveedor">
+                     <app-sw-modal-autocomplete [initialValue]="cForm.get('persona').value" placeholder="Seleccione un proveedor" showProp='descrip'
+                        apiCall='filteredobjects?object=proveedores&filter=<term>' [debug]="false" (optionSelected)="personaSelected($event)"
+                        (optionDeleted)="personaDeleted()">
+                     </app-sw-modal-autocomplete>
+                     <app-datospersona [persona]="cForm.get('persona').value"></app-datospersona>
+                  </div>
+
+                  <div *ngIf="tpcomprob.pideCliente">
+                     <app-sw-modal-autocomplete [initialValue]="cForm.get('persona').value" 
+                        placeholder="Seleccione un Cliente" 
+                        showProp='descrip'
+                        title='Clientes'
+                        apiCall='filteredobjects?object=clientes&filter=<term>'
+                        [debug]="false" 
+                        (optionSelected)="personaSelected($event)"
+                        (optionDeleted)="personaDeleted()">
+                     </app-sw-modal-autocomplete>
+
+                     <app-datospersona [persona]="cForm.get('persona').value"></app-datospersona>
+                  </div>
+
+                  <div *ngIf="tpcomprob.pideRepartidor">
+                     <app-sw-modal-autocomplete [initialValue]="cForm.get('repartidor').value" 
+                        placeholder="Seleccione un Repartidor" 
+                        showProp='descrip'
+                        title='Repartidores'
+                        apiCall='filteredobjects?object=repartidores&filter=<term>'
+                        [debug]="false" 
+                        (optionSelected)="repartidorSelected($event)"
+                        (optionDeleted)="repartidorDeleted()">
+                     </app-sw-modal-autocomplete>
+                  </div>
+               </div>
+
+
+               <div fxFlex="50" class="con-borde alt120">
+                  <div fxLayout="row">
+                     <div fxFlex="50" fxLayoutAlign="end">
+                        <div fxLayout="column">
+                           <div fxLayoutAlign="end">
+                              <mat-form-field class="fecha">
+                                 <input matInput placeholder="Fecha" type="date" formControlName="fecha">
+                              </mat-form-field>
+                           </div>
+                           <div fxLayoutAlign="end">
+                              <mat-form-field class="ptovta">
+                                 <input matInput placeholder="Punto de Venta" type="text" formControlName="ptovta" class="input-align-end">
+                              </mat-form-field>
+                              <mat-form-field class="numero">
+                                 <input matInput placeholder="Numero" type="text" formControlName="numero" class="input-align-end">
+                              </mat-form-field>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+
+
+               </div>
+            </div>
+
+            <div fxLayout="row">
+               <div fxFlex="100" class="con-borde alt80">
+                  <app-sw-modal-autocomplete [initialValue]="cForm.get('deposito').value" 
+                                           placeholder="Seleccione un Deposito" 
+                                           showProp='descrip'
+                                           title='Depósitos'
+                                           apiCall='filteredobjects?object=depositos&filter=<term>' 
+                                           [debug]="false" 
+                                           (optionSelected)="depositoSelected($event)"
+                                           (optionDeleted)="depositoDeleted()">
+                  </app-sw-modal-autocomplete>
+               </div>
+            </div>
+            <div fxLayout="row">
+               <div fxFlex="100" class="con-borde alt400">
+                  <div fxLayout="row">
+                     <div fxFlex="100" fxLayoutAlign="end">
+                        <i class="fa fa-list menu-return-button" (click)="listarProductos()"></i>
+                     </div>
+                  </div>
+
+                  <div formArrayName="detalle" style="margin: 10px;">
+                     <div fxLayout="row" *ngFor="let linea of cForm.get('detalle')['controls']; let i=index;" [formGroupName]="i">
+                        <div fxFlex="40" class="detalle-linea detalle-linea-producto">
+                           {{linea.value.producto.descripl}}
+                        </div>
+
+                        <div fxFlex="20" class="detalle-linea detalle-linea-producto">
+                           {{linea.value.producto.presentacion.descrip}}
+                        </div>
+                        <div fxFlex="10" class="detalle-linea detalle-linea-cantidad">
+                           <input type="number" formControlName="cantidad" class="detalle-linea cantidad-input">
+                        </div>
+                        <div fxFlex="15" class="detalle-line detalle-linea-importe">
+                           <input type="number" formControlName="neto" class="detalle-linea neto-input">
+                        </div>
+                        <div fxFlex="15" class="detalle-linea detalle-linea-importe">
+                           {{linea.value.cantidad * linea.value.neto}}
+                        </div>
+                     </div>
+                  </div>
+
+               </div>
+            </div>
+            <div fxLayout="row">
+               <div fxFlex="100" class="con-borde alt80">
+                  <div style="text-align: end;">
+                     Total : $ {{this.cForm.get('total').value | number: '1.2-2'}}
+                     <button mat-button (click)="saveForm()">
+                        <i class="fa fa-check" style="color: green;"></i>
+                        Grabar
+                     </button>
+                  </div>
+               </div>
+            </div>
+         </form>
+      </mat-card-content>
+
+
+
+   </mat-card>
+
+</div>
+<div *ngIf="listProductsVisible">
+
+   <app-productos-list [productos]="productos" [productoscomprobante]="productoscomprobante" (select)="refreshProductos($event)">
+
+   </app-productos-list>
+</div>
+
+<!-- {{cForm.value | json}} -->

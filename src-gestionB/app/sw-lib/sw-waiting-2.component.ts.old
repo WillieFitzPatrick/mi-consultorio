@@ -1,0 +1,68 @@
+import { Component } from '@angular/core';
+/* 
+
+      <div class="waiting-container">
+      <div class="waiting-box">
+         <div class="waiting-message">
+            <i class="fas fa-spinner"></i>
+            <ng-content select="[message]">
+            </ng-content>
+         </div>
+      </div>
+      </div>
+
+*/
+
+@Component({
+   selector: 'app-sw-waiting-2',
+   template: `
+
+      <div fxLayout="row" fxLayoutAlign="center center">
+         <div fxFlex="25">
+         </div>
+
+         <div fxFlex="50" class="waiting-box">
+            <div fxLayout="row">
+               <div fxFlex="20" style="text-align: end">
+               <i class="fa fa-spinner fa-spin fa-2x"></i>
+               </div>
+
+               <div fxFlex="2">
+               </div>
+               
+               <div fxFlex="78" style="text-align: start">
+                  <ng-content select="[message]">
+                  </ng-content>  
+               </div>
+            </div>
+         </div>
+
+         <div fxFlex="25">
+         </div>
+      </div>
+
+
+  `,
+   styles: [`
+      .waiting-box{
+         border: 1px solid black; 
+         width: 300px; 
+         max-width: 300px;
+         margin-top: 20px;
+         min-height: 80px;
+         max-height: 80px;
+         padding: 30px;
+         font-size: 18px;
+      }
+   
+  `]
+})
+export class SwWaitingComponent2  {
+   // @Input() waitingMessage: string;
+
+   constructor() { 
+
+   }
+
+}
+

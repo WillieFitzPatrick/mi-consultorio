@@ -1,0 +1,13 @@
+{
+   "title": "Personas",
+   "searchPlaceholder": "Buscar ...",
+   "searchcolumn": "descrip",
+   "displayedColumns": [ "Id","descrip", "cuit", "activo"],
+   "displayedColumnsXS": [ "descrip", "activo"],
+   "columns": [
+      {"caption": "Id", "data": "Id", "class": "id-column", "pipe": "none"},
+      {"caption": "Descripcion", "data": "descrip", "class": "descrip-column", "pipe": "none"},
+      {"caption": "Cuit", "data": "cuit", "class": "descrip-column", "pipe": "none"},
+      {"caption": "Activo", "data": "activo", "class": "activo-column", "pipe": "SiNo"}
+   ]
+}
