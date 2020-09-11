@@ -365,3 +365,5 @@ invalid character '}' looking for beginning of object key string
 2020/09/11 09:21:32 main.go:57: connected to sqlite database
 2020/09/11 09:21:50 main.go:32: Listening on port:  8400
 2020/09/11 09:21:50 main.go:57: connected to sqlite database
+2020/09/11 09:23:11 main.go:32: Listening on port:  8400
+2020/09/11 09:23:11 main.go:57: connected to sqlite database
