@@ -1,0 +1,23 @@
+<div class="page-container">
+    <div class="container">
+        <div class="left-column">
+            <div class="img-container">
+                <img src="assets/logo.svg" alt="Mi Consultorio" title="Mi Consultorio">
+            </div>
+            <h1 class="title">Mi Consultorio</h1>
+            <h4 class="subtitle">gesti&oacute;n de historias cl&iacute;nicas</h4>
+        </div>
+        <div class="right-column">
+            <h3>Acceso al Portal</h3>
+            <div class="separator"></div>
+            <form class="edit-form" [formGroup]="form">
+                <p>Usuario</p>
+                <input formControlName="Usuario" type="text" autofocus required (focus)="loginError = false">
+                <p>Contraseña</p>
+                <input formControlName="Password" type="password" required (focus)="loginError = false">
+            </form>
+            <button (click)="doLogin()">Aceptar</button>
+            <p *ngIf="loginError">Error de Credenciales !</p>
+        </div>
+    </div>
+</div>

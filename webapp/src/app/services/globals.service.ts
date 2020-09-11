@@ -1,11 +1,11 @@
 import { Injectable } from '@angular/core';
 import { DatePipe } from '@angular/common';
+import { environment } from '../../environments/environment';
 
 @Injectable()
 export class GlobalsService {
   private _hoy: string;
-  //private url = 'http://localhost:5000/api/';
-  private url: string = "http://gestionb.swapps.com.ar/dataServer/api/";
+  private url = environment.API_URL;
 
   constructor(  dp: DatePipe) {
      this._hoy = dp.transform( new Date(), 'yyyy-MM-dd' );

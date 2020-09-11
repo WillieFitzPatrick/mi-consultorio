@@ -1,0 +1,54 @@
+<div class="container">
+    <div class="datos-container">
+        <div class="flex-row-space-between datos-row header">
+            <div>
+                <span class="apellido">{{paciente.Apellido}}, </span>
+                <span class="nombre">{{paciente.Nombre}}</span>
+            </div>
+            <span class="edad">{{paciente.Edad}} años.</span>
+        </div>
+        
+        <div class="flex-row-space-between datos-row">
+            <span class="doc">{{paciente.TipoDoc}} : {{paciente.NroDoc}}</span>
+            <span class="fecnac">{{paciente.FechaNac| date: 'dd-MM-yyyy'}}</span>
+            <span class="os">{{paciente.ObraSocial}} : {{paciente.NroAfiliado}}</span>
+        </div>
+
+    </div>
+
+    <div class="sep">
+    </div>
+
+    <div class="flex-row-space-between flex-h-center datos-row" *ngIf="!status.isEditingVisita">
+        <span class="contador-visitas"> <span *ngIf="visitasCount===0">Sin</span><span *ngIf="visitasCount!==0">{{visitasCount}}</span> visitas registradas.</span>
+        <loader-button
+            caption="Nueva Visita" 
+            bg-color="#ffffff" 
+            color="#0481ca"
+            width="160px"
+            (click)="onNuevaVisita($event)"
+        ></loader-button>
+    </div>
+
+    <ng-container *ngIf="visitasCount !== 0 && !status.isEditingVisita">
+        <div class="sep">
+        </div>
+        <ng-container *ngFor="let visita of paciente.Visitas; let i = index; trackBy: trackByFn">
+            <div class="flex-row visitas-row" (click)="onVerVisita(visita)" *ngIf="i <= status.lastVisitaShownIndex">
+                <span class="fecha-visita">&nbsp;{{visita.Fecha | date:"dd-MM-yyyy"}}</span>
+                <span class="motivo-visita">&nbsp;:&nbsp;{{visita.Motivo}}</span>
+            </div>
+        </ng-container>
+        <ng-container *ngIf="status.lastVisitaShownIndex < visitasCount-1">
+            <div class="flex-center btn-mas-visitas" (click)="verMasVisitas()">ver mas visitas</div>
+        </ng-container>
+    </ng-container>
+
+    <app-visita-edit-form
+        [visita]="selectedVisita"
+        [id]="paciente.ID"
+        [is-new]="status.nuevaVisita"
+        *ngIf="status.isEditingVisita"
+        (onClose)="onCloseVisitaForm($event)"
+    ></app-visita-edit-form>
+</div>

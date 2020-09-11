@@ -1,1 +1,63 @@
-<p>home works!</p>
+<div class="page-container">
+    <section id="section1">
+        <div class="search-section">
+            <input type="text" #searchBox class="searchBox" placeholder="Buscar paciente"
+                (focus)="removePlaceholder()" (blur)="attachPlaceholder()" (keydown.enter)="search()" />
+        </div>
+
+        <div class="server-error-container" *ngIf="!isSearching && dataError">
+            <server-error (click)="search()"></server-error>
+        </div>
+
+        <div class="content" *ngIf="!isFullMenuVisible">
+
+            <div class="data-not-found" *ngIf="!isSearching && !dataError && searchResults.length === 0">
+                <p>Parece que el filtro aplicado no devolvió ningún resultado !</p>
+             </div>
+
+            <div class="hand-waiting-container" *ngIf="isSearching">
+                <hand-waiting></hand-waiting>
+            </div>
+
+            <ng-container *ngIf="searchResults.length > 0 && !isSearching">
+                <app-pacientes-list [pacientes]="searchResults" [title]="pacientesTitle"></app-pacientes-list>
+            </ng-container>
+
+        </div>
+
+        <!-- 
+
+        <div class="content" *ngIf="!isFullMenuVisible">
+            <ng-container *ngIf="searchResults.length === 0 && !isSearching">
+                <img src="assets/gestionb-logo.png">
+                <h2>gestiónB</h2>
+            </ng-container>
+            <ng-container *ngIf="isSearching">
+                <app-sw-waiting [show]="isSearching" message="Buscando en gestiónB"></app-sw-waiting>
+            </ng-container>
+            <ng-container *ngIf="searchResults.length > 0 && !isSearching">
+                <mat-list role="list">
+                    <mat-list-item role="listitem" *ngFor="let res of searchResults">
+                        <button mat-icon-button>
+                            <ng-container [ngSwitch]="res.clase">
+                                <i class="fa fa-user icon-blue fa-2x" *ngSwitchCase="'C'"></i>
+                                <i class="fa fa-user icon-green fa-2x" *ngSwitchCase="'P'"></i>
+                                <i class="fa fa-barcode fa-2x" *ngSwitchCase="'T'"></i>
+                            </ng-container>
+                        </button>
+                        <span style="margin-left: 15px;">{{res.descrip}}</span>
+                        <span style="margin-left: 15px;">{{res.cod}}</span>
+                    </mat-list-item>
+                </mat-list>
+            </ng-container>
+        </div>
+        -->
+
+        <!-- 
+        <sw-slider-menu [menu]="menu" [full]="isFullMenuVisible" (onOpenLink)="goTo($event)">
+        </sw-slider-menu> 
+        -->
+
+    </section>
+    <!-- <div class="observed-line" enter-viewport (onEnterViewport)="moveToTop($event)"></div> -->
+</div>

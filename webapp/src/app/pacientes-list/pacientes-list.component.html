@@ -1,0 +1,41 @@
+<div class="list-container">
+
+    <div class="paciente-edit-form" *ngIf="!status.isLoading && !status.dataError && status.isEditing">
+        <app-white-box 
+            [title]="((status.isNew) ? 'Nuevo' : 'Editar' ) + ' Paciente'"
+            icon="close"
+            [hide-content]="false"
+            (onHideContent)="closeEditForm(null)">
+            <paciente-edit-form *ngIf="status.isEditing" [is-new]="status.isNew" [paciente]="selectedPaciente" (onClose)="closeEditForm($event)"></paciente-edit-form>
+        </app-white-box>
+    </div>
+
+    <div class="flex-row-space-between flex-h-center">
+        <div class="title">{{title}}</div>
+        <div class="btn-nuevo-paciente-container">
+            <loader-button
+                caption="Nuevo Paciente" 
+                bg-color="#ffffff" 
+                color="#0481ca"
+                width="200px"
+                [loading]="status.isLoading" 
+                (click)="nuevoPaciente($event)"
+                *ngIf="!status.isEditing"
+            ></loader-button>
+        </div>
+    </div>
+
+
+
+    <div *ngIf="!status.isLoading && !status.dataError && !status.isEditing">
+        <ng-container *ngFor="let paciente of pacientes">
+            <app-pacientes-list-data [paciente]="paciente">
+            </app-pacientes-list-data>
+        </ng-container>
+    </div>
+
+
+
+</div>
+
+

@@ -5,12 +5,14 @@ import (
 	"encoding/json"
 	"fmt"
 	"net/http"
-	"../dbcfg"
-	"../logger"
+	"time"
+	"strings"
 	"github.com/jinzhu/gorm"
 	"github.com/julienschmidt/httprouter"
-	// "../item"
-	"../cita"
+	"../dbcfg"
+	"../logger"
+	"../visita"
+	"../age"
 
 )
 
@@ -29,9 +31,10 @@ type Paciente struct {
 	Nombre    	string
 	Apellido    string
 	FechaNac    string
+	Edad        int
 	ObraSocial  string
 	NroAfiliado string
-	Citas 		[]cita.Cita `gorm:"save_associations:false;"`
+	Visitas 	[]visita.Visita `gorm:"save_associations:false;"`
 
 }
 
@@ -54,26 +57,31 @@ func Routes(r *httprouter.Router, version string) {
 	r.GET("/pacientes/:id", ListOne)
 	r.POST("/pacientes", Insert)
 	r.PUT("/pacientes/:id", Update)
-
-	// r.GET("/comandaitems/:id", ListItems)
 }
 
 func (Paciente) TableName() string {
 	return "pacientes"
 }
-// func (ComandaItem) TableName() string {
-// 	return "comanda_items"
-// }
 
 func List(w http.ResponseWriter, r *http.Request, ps httprouter.Params) {
+	q := r.URL.Query()
+	_filter := q.Get("filter") 
+	// fmt.Println(" url : " + r.URL.RawQuery)
+	// fmt.Println(" filter : " + _filter)
 
 	pacientes := []Paciente{}
 	db := dbcfg.GetDB()
 
 	// Run the query
-	db.
-		// Preload("Citas").
-		Find(&pacientes)
+	_stringFilter := "%"+ _filter +"%"
+	db.Where("nombre LIKE ? or apellido LIKE ? or nro_doc = ?", _stringFilter, _stringFilter, _filter).Preload("Visitas").Find(&pacientes)
+
+	for i, p := range pacientes {
+		birthDate, _ := time.Parse("2006-01-02T15:04:05.000Z", p.FechaNac + "T00:00:00.000Z")
+		pacientes[i].Edad = age.Age(birthDate)
+		pacientes[i].Apellido = strings.ToLower(p.Apellido)
+		pacientes[i].Nombre = strings.ToLower(p.Nombre)
+	}
 
 	json, err := json.Marshal(&pacientes)
 	if err != nil {
@@ -94,9 +102,13 @@ func ListOne(w http.ResponseWriter, r *http.Request, ps httprouter.Params) {
 	db := dbcfg.GetDB()
 
 	// Run the query ( include citas in the result )
-	db.
-		Preload("Citas").
-		First(&paciente, uid)
+	db.Preload("Citas").
+	   First(&paciente, uid)
+
+	for i, p := range paciente {
+		birthDate, _ := time.Parse("2006-01-02T15:04:05.000Z", p.FechaNac + "T00:00:00.000Z")
+		paciente[i].Edad = age.Age(birthDate)
+	}
 
 	json, err := json.Marshal(&paciente)
 	if err != nil {

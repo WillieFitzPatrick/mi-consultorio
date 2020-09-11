@@ -18,12 +18,12 @@ export class AppComponent {
               private mts: MenuTitleService) { }
 
   ngOnInit() {
-     this._subscription = this.mts.menuTitle.subscribe( t => this.title = t );
-     //this.router.navigate(['/dashboard']);
-     //this.router.navigate(['/comprobs/1']);
-     //this.router.navigate(['/config']);
-     this.router.navigate(['/home']);
+     this._subscription = this.mts.menuTitle.subscribe( t => {
+        setTimeout( () => { this.title = t },100);
+      });
+     this.router.navigate(['/login']);
   }
+  
   ngOnDestroy() {
      if (this._subscription) {
         this._subscription.unsubscribe();
@@ -32,5 +32,8 @@ export class AppComponent {
 
   gotoHome() {
      this.router.navigate(['/home']);
+  }
+  gotoLogin() {
+     this.router.navigate(['/login']);
   }
 }

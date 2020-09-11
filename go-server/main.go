@@ -3,10 +3,10 @@ package main
 import (
 	"./dbcfg"
 	"./logger"
-	// "./comanda"
+	"./dbcheck"
+	"./login"
 	"./paciente"
-	"./cita"
-	// "./item"
+	"./visita"
 	"fmt"
 	"os"
 	"net/http"
@@ -50,14 +50,6 @@ func main() {
 		os.Exit(1)
 	}
 
-	db.AutoMigrate(&paciente.Paciente{})
-	db.AutoMigrate(&cita.Cita{})
-	// db.AutoMigrate(&comanda.Comanda{})
-	// db.AutoMigrate(&comanda.ComandaItem{})
-	// db.AutoMigrate(&item.Rubro{})
-	// db.AutoMigrate(&item.Marca{})
-	// db.AutoMigrate(&item.Item{})
-
 	defer db.Close()
 
 	// save a copy so it's shared in other packages
@@ -69,7 +61,9 @@ func main() {
 	router.NotFound = http.HandlerFunc( MyNotFound )
 
 	paciente.Routes(router, VERSION)
-	cita.Routes(router, VERSION)
+	visita.Routes(router, VERSION)
+	login.Routes(router, VERSION)
+	dbcheck.Routes(router, VERSION)
 	// item.Routes(router, VERSION)
 
 	fmt.Println("server started !")
@@ -89,14 +83,14 @@ func (s *Server) ServeHTTP (w http.ResponseWriter, r *http.Request) {
 	s.r.ServeHTTP(w, r)
   }
 
-func UpdateDB(w http.ResponseWriter, r *http.Request, ps httprouter.Params) {
-	logger.Log.Println("running migrations")
-	//db.AutoMigrate(&users.Usuario{})
-	logger.Log.Println("migrations finished")
-	json := `{"webapi":"mrt:bienes-patrimoniales","version":"` + VERSION + `", "status":"outdated"}`
-	fmt.Fprint(w, json)
+// func UpdateDB(w http.ResponseWriter, r *http.Request, ps httprouter.Params) {
+// 	logger.Log.Println("running migrations")
+// 	//db.AutoMigrate(&users.Usuario{})
+// 	logger.Log.Println("migrations finished")
+// 	json := `{"webapi":"mrt:bienes-patrimoniales","version":"` + VERSION + `", "status":"outdated"}`
+// 	fmt.Fprint(w, json)
 
-}
+// }
 
 // MyNotFound shows a simple test message
 func MyNotFound(w http.ResponseWriter, r *http.Request) {
@@ -108,6 +102,6 @@ func MyNotFound(w http.ResponseWriter, r *http.Request) {
 
 // TestMsg shows a simple test message
 func TestMsg(w http.ResponseWriter, r *http.Request, ps httprouter.Params) {
-	json := `{"webapi":"mrt:bienes-patrimoniales","version":"` + VERSION + `", "status":"ok"}`
+	json := `{"webapi":"hce:test","version":"` + VERSION + `", "status":"ok"}`
 	fmt.Fprint(w, json)
 }

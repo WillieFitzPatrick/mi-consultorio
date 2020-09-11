@@ -1,0 +1,37 @@
+@import '../../variables';
+
+.title-container {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.edit-form {
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: $default-radius;
+    margin-top: 15px;
+}
+
+.footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: 20px 0 10px 0;
+    .footer-icons {
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+    }
+    .footer-buttons {
+        display: flex;
+        justify-content: flex-end;
+        align-items: flex-end;
+        loader-button + loader-button {
+            margin-left: 15px;
+        }
+    }
+}
+

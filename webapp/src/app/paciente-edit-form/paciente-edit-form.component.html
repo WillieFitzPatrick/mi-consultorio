@@ -1,0 +1,146 @@
+<div class="title-container">
+    <!-- <h2>{{formTitle}}</h2> -->
+    <!-- <mat-icon class="icon" (click)="onClose($event)">close</mat-icon> -->
+</div>
+<form class="edit-form" [formGroup]="editForm">
+    <!-- <div class="flex-row-space-between-"> -->
+
+
+    <div class="flex-start">
+        <mat-form-field appearance="outline" style="width: 49%;">
+            <mat-label>Nombre</mat-label>
+            <input matInput formControlName="Nombre" required>
+            <mat-error *ngIf="flget('Nombre').invalid">{{getErrorMessage('Nombre')}}</mat-error>
+        </mat-form-field>
+    </div>
+
+    <div class="flex-start">
+        <mat-form-field appearance="outline" style="width: 49%;">
+            <mat-label>Apellido</mat-label>
+            <input matInput formControlName="Apellido" required>
+            <mat-error *ngIf="flget('Apellido').invalid">{{getErrorMessage('Apellido')}}</mat-error>
+        </mat-form-field>
+    </div>
+
+
+    <div class="flex-row-space-between">
+        <mat-form-field appearance="outline" style="width: 49%;">
+            <mat-label>Tipo Doc</mat-label>
+            <input matInput formControlName="TipoDoc" type="text" [matAutocomplete]="tipodoc">
+            <mat-error *ngIf="flget('TipoDoc').invalid">{{getErrorMessage('TipoDoc')}}</mat-error>
+        </mat-form-field>
+
+        <mat-form-field appearance="outline" style="width: 49%;">
+            <mat-label>Nro Doc</mat-label>
+            <input matInput formControlName="NroDoc" type="text">
+            <mat-error *ngIf="flget('NroDoc').invalid">{{getErrorMessage('NroDoc')}}</mat-error>
+        </mat-form-field>
+    </div>
+
+    <div class="flex-row-space-between">
+        <mat-form-field appearance="outline" style="width: 49%;">
+            <mat-label>Fecha Nacimiento</mat-label>
+            <input matInput formControlName="FechaNac" type="date" (blur)="CalculaEdad()">
+            <mat-error *ngIf="flget('FechaNac').invalid">{{getErrorMessage('FechaNac')}}</mat-error>
+        </mat-form-field>
+        <mat-form-field appearance="outline" style="width: 49%;">
+            <mat-label>Edad</mat-label>
+            <input matInput formControlName="Edad">
+        </mat-form-field>
+    </div>
+
+    <div class="flex-row-space-between">
+        <mat-form-field appearance="outline" style="width: 49%;">
+            <mat-label>Obra Social</mat-label>
+            <input matInput formControlName="ObraSocial" required>
+            <mat-error *ngIf="flget('ObraSocial').invalid">{{getErrorMessage('ObraSocial')}}</mat-error>
+        </mat-form-field>
+        <mat-form-field appearance="outline" style="width: 49%;">
+            <mat-label>Nro Afiliado</mat-label>
+            <input matInput formControlName="NroAfiliado" required>
+            <mat-error *ngIf="flget('NroAfiliado').invalid">{{getErrorMessage('NroAfiliado')}}</mat-error>
+        </mat-form-field>
+    </div>
+
+    
+    <!-- <div class="flex-row-space-between">
+        <mat-form-field appearance="outline" style="width: 49%;">
+            <mat-label>Nro de Serie</mat-label>
+            <input matInput formControlName="NroSerie" type="text">
+            <mat-error *ngIf="flget('NroSerie').invalid">{{getErrorMessage('NroSerie')}}</mat-error>
+        </mat-form-field>
+
+        <mat-form-field appearance="outline" style="width: 20%;">
+            <mat-label>Precio</mat-label>
+            <input matInput formControlName="Precio" type="number" style="text-align: end;font-size: 22px">
+            <mat-icon matPrefix class="pesos-icon">$</mat-icon>
+
+            <mat-error *ngIf="flget('Precio').invalid">{{getErrorMessage('Precio')}}</mat-error>
+        </mat-form-field>        
+    </div>
+    <div class="flex-row-space-between">
+        <mat-form-field appearance="outline" style="width: 49%;">
+            <mat-label>Proveedor</mat-label>
+            <input matInput formControlName="Proveedor" type="text" [matAutocomplete]="proveedor">
+            <mat-error *ngIf="flget('Proveedor').invalid">{{getErrorMessage('Proveedor')}}</mat-error>
+        </mat-form-field>
+        <mat-form-field appearance="outline" style="width: 19%;">
+            <mat-label>Fecha de Compra</mat-label>
+            <input matInput formControlName="FCompra" type="date" required>
+            <mat-error *ngIf="flget('FCompra').invalid">{{getErrorMessage('FCompra')}}</mat-error>
+        </mat-form-field>
+
+        <mat-form-field appearance="outline" style="width: 29%;">
+            <mat-label>Comprobante de Compra</mat-label>
+            <input matInput formControlName="Comprobante" type="text">
+            <mat-error *ngIf="flget('Comprobante').invalid">{{getErrorMessage('Comprobante')}}</mat-error>
+        </mat-form-field>
+    </div>
+
+
+    <div class="flex-row-space-between">
+        <mat-form-field appearance="outline" style="width: 49%;">
+            <mat-label>Dependencia</mat-label>
+            <input matInput formControlName="Dependencia" type="text" [matAutocomplete]="dependencia">
+            <mat-error *ngIf="flget('Dependencia').invalid">{{getErrorMessage('Dependencia')}}</mat-error>
+        </mat-form-field>
+        <mat-form-field appearance="outline" style="width: 49%;">
+            <mat-label>Cuenta</mat-label>
+            <input matInput formControlName="Cuenta" type="text" [matAutocomplete]="cuenta">
+            <mat-error *ngIf="flget('Cuenta').invalid">{{getErrorMessage('Cuenta')}}</mat-error>
+        </mat-form-field>
+    </div>
+
+    <div class="flex-row-space-between">
+        <mat-form-field appearance="outline" style="width: 90%;">
+            <mat-label>Observaciones</mat-label>
+            <input matInput  formControlName="Obs">
+        </mat-form-field>
+    </div> -->
+
+    <mat-autocomplete #tipodoc="matAutocomplete">
+        <mat-option *ngFor="let tipodoc of tiposdoc" [value]="tipodoc">{{tipodoc}}</mat-option>
+    </mat-autocomplete>
+
+    <!-- <mat-autocomplete #proveedor="matAutocomplete">
+        <mat-option *ngFor="let proveedor of filteredProveedores | async" [value]="proveedor">{{proveedor}}</mat-option>
+    </mat-autocomplete>
+    <mat-autocomplete #dependencia="matAutocomplete" [displayWith]="displayFn">
+        <mat-option *ngFor="let dependencia of filteredDeps | async" [value]="dependencia">{{dependencia.Descrip}}</mat-option>
+    </mat-autocomplete>
+    <mat-autocomplete #cuenta="matAutocomplete" [displayWith]="displayFn">
+        <mat-option *ngFor="let cuenta of filteredCuentas | async" [value]="cuenta">{{cuenta.Descrip}}</mat-option>
+    </mat-autocomplete> -->
+
+</form>
+
+<div class="btn-container">
+    <loader-button
+        caption="Guardar" 
+        bg-color="#ffffff" 
+        color="#0366d6"
+        width="100%"
+        [loading]="false" 
+        (click)="onSave($event)"
+        ></loader-button>
+</div>

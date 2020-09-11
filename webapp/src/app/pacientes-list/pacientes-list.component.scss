@@ -1,0 +1,26 @@
+.list-container {
+    max-width: 1024px;
+    margin: 0 auto;
+    padding: 10px;
+}
+
+.paciente-edit-form {
+    width: 100%;
+    max-width: 1240px;
+    margin-top: 20px;
+}
+
+.btn-nuevo-paciente-container {
+    //width: 100%;
+    padding: 20px 0;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.title {
+    width: 100%;
+    text-align: left;
+    font-size: 18px;
+    padding-left: 10px;
+}
+

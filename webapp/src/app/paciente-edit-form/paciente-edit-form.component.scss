@@ -1,0 +1,37 @@
+@import '../../variables';
+
+.title-container {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.btn-container {
+    width: 100%;
+    min-width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+    padding: 30px 20px 0 0;
+}
+
+.edit-form {
+    padding-top: 20px;
+}
+// .codigo-bien {
+//     display: flex;
+//     align-items: flex-start;
+//     justify-content: center;
+// }
+// mat-chip {
+//     font-size: 26px;
+// }
+// .mat-standard-chip {
+//     padding: 15px 25px;
+//     min-height: 43px;
+// }
+// .pesos-icon {
+//     font-size: 26px;
+// }
+

@@ -1,4 +1,109 @@
 /* You can add global styles to this file, and also import other style files */
+@import './variables';
 
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+// html, body { height: 100%; }
+// body { margin: 0; }
+// * { font-family: 'Open Sans', sans-serif; } 
+
+
+// Starts CSS Reset
+*, *:before, *:after {
+    -khtml-box-sizing: border-box;
+    -ms-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+html, body { 
+    height: 100%; 
+}
+body { 
+    margin: 0; 
+    font-family: Nunito, "Helvetica Neue", sans-serif; 
+    color: #343434;
+}
+div, span, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, abbr, address, cite, code, del, dfn, em, img, ins, kbd, q, samp, small, strong, sub, sup, var, b, i, hr, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, figcaption, figure, header, main, footer, hgroup, menu, nav, section, summary, time, mark, audio, video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    outline: 0;
+    background: transparent;
+}
+// Ends CSS Reset
+
+
+.flex-column {
+    display: flex;
+    flex-direction: column;
+}
+
+.flex-row {
+    display: flex;
+    flex-direction: row;
+}
+
+.flex-col {
+    display: flex;
+    flex-direction: column;
+}
+
+.flex-row-space-between {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.flex-start {
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+}
+.flex-center {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.flex-end {
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-end;
+}
+
+.flex-h-center {
+    display: flex;
+    align-items: center;
+}
+
+.with-border {
+    padding-bottom: 4px;
+    &.bottom {
+        border-bottom: 1px solid $line-color;
+    }
+    &.right {
+        border-right: 1px solid $line-color;
+    }
+}
+
+.hidden {
+    display: none !important;
+}
+
+.mat-form-field {
+    line-height: 1.5;
+}
+
+.mat-form-field-infix {
+    top: -0.25em;
+    padding: 0.6em 0 0.6em 0 !important;
+    border-top: 0.5em solid transparent;
+}
+
+.mat-form-field-appearance-outline .mat-form-field-prefix, .mat-form-field-appearance-outline .mat-form-field-suffix {
+    top: -0.25em !important;
+}
+
+.mat-form-field-appearance-outline .mat-form-field-label {
+    margin-top: 0em;
+}
+
+.mat-input-element:disabled, .mat-form-field-type-mat-native-select.mat-form-field-disabled .mat-form-field-infix::after {
+    color: rgba(0,0,0,.58);
+}

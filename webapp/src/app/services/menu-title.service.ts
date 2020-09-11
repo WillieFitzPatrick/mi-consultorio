@@ -5,7 +5,7 @@ const TITLE_CONST = "Mi Consultorio"
 
 @Injectable()
 export class MenuTitleService {
-   public menuTitle: BehaviorSubject<string> = new BehaviorSubject(`${TITLE_CONST} - Menu Principal`);
+   public menuTitle: BehaviorSubject<string> = new BehaviorSubject(`${TITLE_CONST} -`);
 
    constructor() {
 

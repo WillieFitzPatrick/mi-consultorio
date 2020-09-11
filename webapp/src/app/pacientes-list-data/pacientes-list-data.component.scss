@@ -1,0 +1,77 @@
+@import '../../variables';
+
+.container {
+    padding: 12px 12px;
+    border-radius: 5px;
+    margin-bottom: 20px;
+    text-align: left;
+    font-size: 15px;
+    background-color: #fff;
+    box-shadow: $shadow;
+}
+
+.datos-row, .visitas-row {
+    padding: 10px;
+}
+
+.header {
+  background-color: $kara-light-gray;
+  border-radius: $default-radius;
+  color: #fff;  
+}
+
+.apellido {
+    font-size: 17px;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+.nombre {
+    text-transform:  capitalize;
+    font-size: 15px;
+}
+
+.edad {
+    font-size: 17px;
+}
+
+.sep {
+    height: 1px;
+    width: 100%;
+    background-color: lighten($border-color, 10%);
+    margin: 4px 0;
+}
+.contador-visitas {
+    padding: 7px 12px;
+    border-radius: $default-radius;
+    background-color: lighten($kara-light-gray,20);
+    color: #fff;
+    font-size: 16px;
+}
+.visitas-row:hover {
+    background-color: lighten(lightblue,10);
+    cursor: pointer;
+    border-radius: $default-radius;
+}
+.fecha-visita {
+    font-weight: 600;
+}
+.motivo-visita {
+    font-weight: 400;
+}
+// .ultima-cita-container {
+//     min-height: 20px;
+// }
+
+.btn-nueva-cita-container {
+    width: 100%;
+    padding: 20px 0;
+    display: flex;
+    justify-content: flex-end;
+    padding: 10px;
+
+}
+
+.btn-mas-visitas {
+    cursor: pointer;
+}

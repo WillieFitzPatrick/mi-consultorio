@@ -68,3 +68,272 @@ invalid character '}' looking for beginning of object key string
 2020/08/17 07:53:42 main.go:32: Listening on port:  8400
 2020/08/17 07:53:42 main.go:65: connected to sqlite database
 2020/08/17 07:53:54 main.go:104: Page not found
+2020/08/18 16:27:34 main.go:32: Listening on port:  8400
+2020/08/18 16:27:34 main.go:65: connected to sqlite database
+2020/08/18 16:27:50 main.go:32: Listening on port:  8400
+2020/08/18 16:27:50 main.go:65: connected to sqlite database
+2020/08/18 16:30:31 main.go:32: Listening on port:  8400
+2020/08/18 16:30:31 main.go:65: connected to sqlite database
+2020/08/18 16:31:25 main.go:32: Listening on port:  8400
+2020/08/18 16:31:25 main.go:65: connected to sqlite database
+2020/08/18 16:31:41 main.go:32: Listening on port:  8400
+2020/08/18 16:31:41 main.go:65: connected to sqlite database
+2020/08/18 16:32:06 main.go:32: Listening on port:  8400
+2020/08/18 16:32:06 main.go:65: connected to sqlite database
+2020/08/18 16:37:14 main.go:32: Listening on port:  8400
+2020/08/18 16:37:14 main.go:65: connected to sqlite database
+2020/08/18 16:37:22 main.go:104: Page not found
+2020/08/18 16:37:23 main.go:104: Page not found
+2020/08/18 22:19:57 main.go:32: Listening on port:  8400
+2020/08/18 22:19:57 main.go:65: connected to sqlite database
+2020/08/18 22:19:59 main.go:32: Listening on port:  8400
+2020/08/18 22:19:59 main.go:65: connected to sqlite database
+2020/08/18 22:20:07 main.go:104: Page not found
+2020/08/18 22:20:08 main.go:104: Page not found
+2020/08/18 22:22:07 main.go:32: Listening on port:  8400
+2020/08/18 22:22:07 main.go:65: connected to sqlite database
+2020/08/18 22:22:08 main.go:104: Page not found
+2020/08/18 22:22:10 main.go:104: Page not found
+2020/08/18 22:22:11 main.go:104: Page not found
+2020/08/18 22:22:16 main.go:104: Page not found
+2020/08/18 22:23:17 main.go:32: Listening on port:  8400
+2020/08/18 22:23:17 main.go:65: connected to sqlite database
+2020/08/18 22:23:21 main.go:32: Listening on port:  8400
+2020/08/18 22:23:21 main.go:65: connected to sqlite database
+2020/08/18 22:23:24 main.go:104: Page not found
+2020/08/18 22:23:50 main.go:104: Page not found
+2020/08/18 22:23:51 main.go:104: Page not found
+2020/08/18 22:27:10 main.go:32: Listening on port:  8400
+2020/08/18 22:27:10 main.go:65: connected to sqlite database
+2020/08/18 22:27:30 main.go:32: Listening on port:  8400
+2020/08/18 22:27:30 main.go:65: connected to sqlite database
+2020/08/18 22:27:37 main.go:32: Listening on port:  8400
+2020/08/18 22:27:37 main.go:65: connected to sqlite database
+2020/08/18 22:27:41 main.go:104: Page not found
+2020/08/18 22:28:56 main.go:104: Page not found
+2020/08/18 22:28:57 main.go:104: Page not found
+2020/08/18 22:29:55 main.go:32: Listening on port:  8400
+2020/08/18 22:29:55 main.go:65: connected to sqlite database
+2020/08/18 22:29:57 main.go:104: Page not found
+2020/08/18 22:30:00 main.go:104: Page not found
+2020/08/18 22:30:17 main.go:32: Listening on port:  8400
+2020/08/18 22:30:17 main.go:65: connected to sqlite database
+2020/08/18 22:31:24 main.go:32: Listening on port:  8400
+2020/08/18 22:31:24 main.go:65: connected to sqlite database
+2020/08/18 22:31:26 main.go:104: Page not found
+2020/08/18 22:32:00 main.go:32: Listening on port:  8400
+2020/08/18 22:32:00 main.go:65: connected to sqlite database
+2020/08/18 22:32:07 main.go:32: Listening on port:  8400
+2020/08/18 22:32:07 main.go:65: connected to sqlite database
+2020/08/18 22:32:12 main.go:32: Listening on port:  8400
+2020/08/18 22:32:12 main.go:65: connected to sqlite database
+2020/08/18 22:32:20 main.go:32: Listening on port:  8400
+2020/08/18 22:32:20 main.go:65: connected to sqlite database
+2020/08/18 22:45:26 main.go:104: Page not found
+2020/08/20 13:46:29 main.go:32: Listening on port:  8400
+2020/08/20 13:46:29 main.go:65: connected to sqlite database
+2020/08/20 16:33:50 main.go:32: Listening on port:  8400
+2020/08/20 16:33:50 main.go:65: connected to sqlite database
+2020/08/20 16:34:51 main.go:32: Listening on port:  8400
+2020/08/20 16:34:51 main.go:65: connected to sqlite database
+2020/08/26 14:56:34 main.go:32: Listening on port:  8400
+2020/08/26 14:56:34 main.go:65: connected to sqlite database
+2020/08/26 14:59:00 main.go:32: Listening on port:  8400
+2020/08/26 14:59:00 main.go:65: connected to sqlite database
+2020/08/26 14:59:36 main.go:32: Listening on port:  8400
+2020/08/26 14:59:36 main.go:65: connected to sqlite database
+2020/08/26 15:00:44 main.go:32: Listening on port:  8400
+2020/08/26 15:00:44 main.go:65: connected to sqlite database
+2020/08/26 15:01:03 main.go:32: Listening on port:  8400
+2020/08/26 15:01:03 main.go:65: connected to sqlite database
+2020/08/26 15:01:07 main.go:32: Listening on port:  8400
+2020/08/26 15:01:07 main.go:65: connected to sqlite database
+2020/08/26 15:01:44 main.go:32: Listening on port:  8400
+2020/08/26 15:01:44 main.go:65: connected to sqlite database
+2020/08/26 15:41:18 main.go:32: Listening on port:  8400
+2020/08/26 15:41:18 main.go:65: connected to sqlite database
+2020/08/26 15:42:20 main.go:32: Listening on port:  8400
+2020/08/26 15:42:20 main.go:65: connected to sqlite database
+2020/08/26 15:43:32 main.go:32: Listening on port:  8400
+2020/08/26 15:43:32 main.go:65: connected to sqlite database
+2020/08/26 15:43:40 main.go:32: Listening on port:  8400
+2020/08/26 15:43:40 main.go:65: connected to sqlite database
+2020/08/26 15:43:48 main.go:32: Listening on port:  8400
+2020/08/26 15:43:48 main.go:65: connected to sqlite database
+2020/08/26 15:43:54 main.go:32: Listening on port:  8400
+2020/08/26 15:43:54 main.go:65: connected to sqlite database
+2020/08/26 15:43:59 main.go:32: Listening on port:  8400
+2020/08/26 15:43:59 main.go:65: connected to sqlite database
+2020/08/26 15:44:06 main.go:32: Listening on port:  8400
+2020/08/26 15:44:06 main.go:65: connected to sqlite database
+2020/08/26 15:44:09 main.go:32: Listening on port:  8400
+2020/08/26 15:44:09 main.go:65: connected to sqlite database
+2020/08/26 15:44:16 main.go:32: Listening on port:  8400
+2020/08/26 15:44:16 main.go:65: connected to sqlite database
+2020/08/26 15:46:39 main.go:32: Listening on port:  8400
+2020/08/26 15:46:39 main.go:65: connected to sqlite database
+2020/08/26 16:27:02 main.go:32: Listening on port:  8400
+2020/08/26 16:27:02 main.go:65: connected to sqlite database
+2020/08/27 11:18:33 main.go:32: Listening on port:  8400
+2020/08/27 11:18:33 main.go:65: connected to sqlite database
+2020/08/27 11:18:36 main.go:32: Listening on port:  8400
+2020/08/27 11:18:36 main.go:65: connected to sqlite database
+2020/08/27 11:29:34 main.go:32: Listening on port:  8400
+2020/08/27 11:29:34 main.go:65: connected to sqlite database
+2020/08/27 11:30:34 main.go:32: Listening on port:  8400
+2020/08/27 11:30:34 main.go:65: connected to sqlite database
+2020/08/27 11:31:10 main.go:32: Listening on port:  8400
+2020/08/27 11:31:10 main.go:65: connected to sqlite database
+2020/08/27 11:32:00 main.go:32: Listening on port:  8400
+2020/08/27 11:32:00 main.go:65: connected to sqlite database
+2020/08/27 11:32:55 main.go:32: Listening on port:  8400
+2020/08/27 11:32:55 main.go:65: connected to sqlite database
+2020/08/27 11:33:07 main.go:32: Listening on port:  8400
+2020/08/27 11:33:07 main.go:65: connected to sqlite database
+2020/08/27 12:13:59 main.go:32: Listening on port:  8400
+2020/08/27 12:13:59 main.go:65: connected to sqlite database
+2020/08/27 12:14:06 main.go:32: Listening on port:  8400
+2020/08/27 12:14:06 main.go:65: connected to sqlite database
+2020/08/27 12:14:15 main.go:32: Listening on port:  8400
+2020/08/27 12:14:15 main.go:65: connected to sqlite database
+2020/08/27 12:14:39 main.go:32: Listening on port:  8400
+2020/08/27 12:14:39 main.go:65: connected to sqlite database
+2020/08/27 16:56:39 main.go:33: Listening on port:  8400
+2020/08/27 16:56:39 main.go:67: connected to sqlite database
+2020/08/27 16:58:17 main.go:106: Page not found
+2020/08/27 19:42:17 main.go:33: Listening on port:  8400
+2020/08/27 19:42:17 main.go:67: connected to sqlite database
+2020/08/27 19:44:36 main.go:33: Listening on port:  8400
+2020/08/27 19:44:36 main.go:67: connected to sqlite database
+2020/08/27 20:26:24 main.go:106: Page not found
+2020/08/27 20:26:24 main.go:106: Page not found
+2020/08/27 20:28:17 main.go:33: Listening on port:  8400
+2020/08/27 20:28:17 main.go:58: connected to sqlite database
+2020/08/27 20:28:28 dbcheck.go:39: dbcheck executed
+2020/08/27 20:28:28 main.go:98: Page not found
+2020/08/27 20:28:57 dbcheck.go:39: dbcheck executed
+2020/08/27 20:28:57 main.go:98: Page not found
+2020/08/27 20:29:49 main.go:33: Listening on port:  8400
+2020/08/27 20:29:49 main.go:58: connected to sqlite database
+2020/08/27 20:30:17 main.go:33: Listening on port:  8400
+2020/08/27 20:30:17 main.go:58: connected to sqlite database
+2020/08/27 20:30:21 main.go:33: Listening on port:  8400
+2020/08/27 20:30:21 main.go:58: connected to sqlite database
+2020/08/27 20:46:53 main.go:33: Listening on port:  8400
+2020/08/27 20:46:53 main.go:58: connected to sqlite database
+2020/08/27 20:47:07 main.go:33: Listening on port:  8400
+2020/08/27 20:47:07 main.go:58: connected to sqlite database
+2020/08/27 20:47:10 main.go:33: Listening on port:  8400
+2020/08/27 20:47:10 main.go:58: connected to sqlite database
+2020/08/27 20:47:27 main.go:33: Listening on port:  8400
+2020/08/27 20:47:27 main.go:58: connected to sqlite database
+2020/08/27 20:47:48 main.go:33: Listening on port:  8400
+2020/08/27 20:47:48 main.go:58: connected to sqlite database
+2020/08/27 20:48:00 main.go:98: Page not found
+2020/08/27 21:03:03 main.go:33: Listening on port:  8400
+2020/08/27 21:03:03 main.go:58: connected to sqlite database
+2020/08/27 21:03:17 main.go:33: Listening on port:  8400
+2020/08/27 21:03:17 main.go:58: connected to sqlite database
+2020/08/27 21:03:25 main.go:33: Listening on port:  8400
+2020/08/27 21:03:25 main.go:58: connected to sqlite database
+2020/08/27 21:03:28 main.go:33: Listening on port:  8400
+2020/08/27 21:03:28 main.go:58: connected to sqlite database
+2020/08/27 21:03:41 dbcheck.go:39: dbcheck executed
+2020/08/27 21:03:41 main.go:98: Page not found
+2020/08/27 21:16:29 dbcheck.go:39: dbcheck executed
+2020/08/27 21:16:29 main.go:98: Page not found
+2020/08/27 21:16:36 main.go:98: Page not found
+2020/08/29 11:15:13 main.go:33: Listening on port:  8400
+2020/08/29 11:15:13 main.go:58: connected to sqlite database
+2020/08/29 11:33:22 main.go:98: Page not found
+2020/09/04 16:16:43 main.go:33: Listening on port:  8400
+2020/09/04 16:16:43 main.go:58: connected to sqlite database
+2020/09/04 17:23:31 main.go:98: Page not found
+2020/09/05 07:51:35 main.go:33: Listening on port:  8400
+2020/09/05 07:51:35 main.go:58: connected to sqlite database
+2020/09/05 09:06:52 main.go:33: Listening on port:  8400
+2020/09/05 09:06:52 main.go:58: connected to sqlite database
+2020/09/05 09:06:58 main.go:33: Listening on port:  8400
+2020/09/05 09:06:58 main.go:58: connected to sqlite database
+2020/09/05 09:07:03 main.go:33: Listening on port:  8400
+2020/09/05 09:07:03 main.go:58: connected to sqlite database
+2020/09/05 16:54:25 main.go:33: Listening on port:  8400
+2020/09/05 16:54:25 main.go:58: connected to sqlite database
+2020/09/09 07:30:15 main.go:33: Listening on port:  8400
+2020/09/09 07:30:15 main.go:58: connected to sqlite database
+2020/09/09 07:30:18 main.go:33: Listening on port:  8400
+2020/09/09 07:30:18 main.go:58: connected to sqlite database
+2020/09/09 07:30:36 main.go:33: Listening on port:  8400
+2020/09/09 07:30:36 main.go:58: connected to sqlite database
+2020/09/09 07:30:55 main.go:33: Listening on port:  8400
+2020/09/09 07:30:55 main.go:58: connected to sqlite database
+2020/09/09 07:31:46 main.go:33: Listening on port:  8400
+2020/09/09 07:31:46 main.go:58: connected to sqlite database
+2020/09/09 07:32:39 main.go:33: Listening on port:  8400
+2020/09/09 07:32:39 main.go:58: connected to sqlite database
+2020/09/09 07:32:43 main.go:33: Listening on port:  8400
+2020/09/09 07:32:43 main.go:58: connected to sqlite database
+2020/09/09 07:33:07 main.go:33: Listening on port:  8400
+2020/09/09 07:33:07 main.go:58: connected to sqlite database
+2020/09/09 07:33:29 main.go:33: Listening on port:  8400
+2020/09/09 07:33:29 main.go:58: connected to sqlite database
+2020/09/09 07:45:47 main.go:33: Listening on port:  8400
+2020/09/09 07:45:47 main.go:58: connected to sqlite database
+2020/09/09 07:48:50 visita.go:198: Se elimino la visita con id:  7
+2020/09/09 16:37:19 main.go:33: Listening on port:  8400
+2020/09/09 16:37:19 main.go:58: connected to sqlite database
+2020/09/09 16:43:09 main.go:33: Listening on port:  8400
+2020/09/09 16:43:09 main.go:58: connected to sqlite database
+2020/09/10 07:36:16 visita.go:198: Se elimino la visita con id:  10
+2020/09/10 16:45:06 main.go:32: Listening on port:  8400
+2020/09/10 16:45:06 main.go:57: connected to sqlite database
+2020/09/10 16:45:46 dbcheck.go:43: dbcheck executed
+2020/09/10 16:45:46 main.go:98: Page not found
+2020/09/10 16:50:53 main.go:32: Listening on port:  8400
+2020/09/10 16:50:53 main.go:57: connected to sqlite database
+2020/09/10 16:51:00 main.go:32: Listening on port:  8400
+2020/09/10 16:51:00 main.go:57: connected to sqlite database
+2020/09/10 16:51:13 main.go:32: Listening on port:  8400
+2020/09/10 16:51:13 main.go:57: connected to sqlite database
+2020/09/10 16:51:16 main.go:32: Listening on port:  8400
+2020/09/10 16:51:16 main.go:57: connected to sqlite database
+2020/09/10 16:51:39 main.go:32: Listening on port:  8400
+2020/09/10 16:51:39 main.go:57: connected to sqlite database
+2020/09/10 16:52:25 main.go:32: Listening on port:  8400
+2020/09/10 16:52:25 main.go:57: connected to sqlite database
+2020/09/10 16:52:29 main.go:32: Listening on port:  8400
+2020/09/10 16:52:29 main.go:57: connected to sqlite database
+2020/09/10 16:52:57 main.go:32: Listening on port:  8400
+2020/09/10 16:52:57 main.go:57: connected to sqlite database
+2020/09/10 16:53:09 main.go:32: Listening on port:  8400
+2020/09/10 16:53:09 main.go:57: connected to sqlite database
+2020/09/10 16:53:16 main.go:32: Listening on port:  8400
+2020/09/10 16:53:16 main.go:57: connected to sqlite database
+2020/09/10 16:53:26 main.go:32: Listening on port:  8400
+2020/09/10 16:53:26 main.go:57: connected to sqlite database
+2020/09/10 16:53:49 main.go:32: Listening on port:  8400
+2020/09/10 16:53:49 main.go:57: connected to sqlite database
+2020/09/10 16:55:40 main.go:32: Listening on port:  8400
+2020/09/10 16:55:40 main.go:57: connected to sqlite database
+2020/09/10 16:59:19 main.go:32: Listening on port:  8400
+2020/09/10 16:59:19 main.go:57: connected to sqlite database
+2020/09/10 17:58:12 main.go:32: Listening on port:  8400
+2020/09/10 17:58:12 main.go:57: connected to sqlite database
+2020/09/10 18:09:30 main.go:32: Listening on port:  8400
+2020/09/10 18:09:30 main.go:57: connected to sqlite database
+2020/09/10 18:10:39 main.go:32: Listening on port:  8400
+2020/09/10 18:10:39 main.go:57: connected to sqlite database
+2020/09/10 18:13:26 main.go:32: Listening on port:  8400
+2020/09/10 18:13:26 main.go:57: connected to sqlite database
+2020/09/10 18:13:31 main.go:32: Listening on port:  8400
+2020/09/10 18:13:31 main.go:57: connected to sqlite database
+2020/09/10 18:15:21 main.go:32: Listening on port:  8400
+2020/09/10 18:15:21 main.go:57: connected to sqlite database
+2020/09/10 18:17:01 main.go:32: Listening on port:  8400
+2020/09/10 18:17:01 main.go:57: connected to sqlite database
+2020/09/10 18:17:06 login.go:59: Los datos ingresados son incorrectos.
+2020/09/10 18:17:45 main.go:32: Listening on port:  8400
+2020/09/10 18:17:45 main.go:57: connected to sqlite database
+2020/09/10 18:21:06 login.go:56: Los datos ingresados son incorrectos.
+2020/09/11 09:16:24 main.go:32: Listening on port:  8400
+2020/09/11 09:16:24 main.go:57: connected to sqlite database
