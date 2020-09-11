@@ -28,11 +28,17 @@ export class PacientesListComponent implements OnInit {
     this.status.scrollPosition = [0,0];
   }
 
-  onEdit( edit: {paciente: IPaciente, asNew: boolean}) {
-    // this.selectedBien = edit.bien;
-    // this.status.isNew = edit.asNew;
-    // this.status.isEditing = true;
-    // this.scrollToTop();
+  // onEdit( edit: {paciente: IPaciente, asNew: boolean}) {
+  //   // this.selectedBien = edit.bien;
+  //   // this.status.isNew = edit.asNew;
+  //   // this.status.isEditing = true;
+  //   // this.scrollToTop();
+  // }
+
+  editarPaciente( paciente: IPaciente) {
+    this.selectedPaciente = Paciente(paciente)
+    this.status.isNew = false;
+    this.status.isEditing = true;
   }
 
   nuevoPaciente(event) {

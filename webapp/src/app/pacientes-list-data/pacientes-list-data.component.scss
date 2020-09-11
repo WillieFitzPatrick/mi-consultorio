@@ -30,6 +30,11 @@
     text-transform:  capitalize;
     font-size: 15px;
 }
+.edad-edit-container {
+    display: flex;
+    align-items: center;
+    min-height: 24px;
+}
 
 .edad {
     font-size: 17px;

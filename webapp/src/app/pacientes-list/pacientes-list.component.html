@@ -29,7 +29,7 @@
 
     <div *ngIf="!status.isLoading && !status.dataError && !status.isEditing">
         <ng-container *ngFor="let paciente of pacientes">
-            <app-pacientes-list-data [paciente]="paciente">
+            <app-pacientes-list-data [paciente]="paciente" (onEditPaciente)="editarPaciente($event)">
             </app-pacientes-list-data>
         </ng-container>
     </div>

@@ -5,7 +5,17 @@
                 <span class="apellido">{{paciente.Apellido}}, </span>
                 <span class="nombre">{{paciente.Nombre}}</span>
             </div>
-            <span class="edad">{{paciente.Edad}} años.</span>
+            <div class="edad-edit-container">
+                <span class="edad">{{paciente.Edad}} años.</span>
+                <svg-icon
+                    icon="edit"
+                    size="16"
+                    color="#fff"
+                    margin="20"
+                    (click)="onEdit()"
+                ></svg-icon>
+            </div>
+
         </div>
         
         <div class="flex-row-space-between datos-row">

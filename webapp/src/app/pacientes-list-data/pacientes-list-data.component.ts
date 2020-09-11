@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, ChangeDetectorRef } from '@angular/core';
+import { Component, OnInit, Input, ChangeDetectorRef, EventEmitter, Output } from '@angular/core';
 import { IPaciente, IVisita, Visita } from "../models/models";
 @Component({
   selector: 'app-pacientes-list-data',
@@ -7,6 +7,8 @@ import { IPaciente, IVisita, Visita } from "../models/models";
 })
 export class PacientesListDataComponent implements OnInit {
   @Input("paciente") paciente: IPaciente;
+  @Output("onEditPaciente") onEditPaciente = new EventEmitter<IPaciente>();
+
   status: { [key: string]: any } = {};
   selectedVisita: IVisita|null = null;
   visitasCount: number = 0;
@@ -67,6 +69,9 @@ export class PacientesListDataComponent implements OnInit {
       }
     }
     this.status.isEditingVisita=false;
+  }
+  onEdit() {
+    this.onEditPaciente.emit(this.paciente);
   }
 
   trackByFn(index, item: IVisita) {
