@@ -14,30 +14,12 @@ import (
 )
 
 type Visita struct {
-	// id       uint   `gorm:"column:id;primary_key;AUTO_INCREMENT" json:"ID"`
-	// TipoDoc    string `gorm:"column:tipo_doc" json:"TipoDoc"`
-	// NroDoc int    `gorm:"column:nro_doc" json:"Sucursal"`
-	// Puesto   int    `gorm:"column:Puesto" json:"Puesto"`
-	// Usuario  string `gorm:"column:Usuario" json:"Usuario"`
-	// Estado   int    `gorm:"column:Estado;default:0" json:"Estado"`
-	// Items	 []ComandaItem 
-
 	ID  		uint   `gorm:"column:id;primary_key;AUTO_INCREMENT"`
 	PacienteID  uint
 	Fecha       string
 	Motivo      string
 	Texto		string
 }
-
-// type ComandaItem struct {
-// 	ID        uint    `gorm:"column:ID;primary_key;AUTO_INCREMENT" json:"ID"`
-// 	ComandaID uint    `gorm:"column:ComandaID;" json:"-"`
-// 	ItemID    int     `gorm:"column:ItemID;" json:"ItemID"`
-// 	Item	  item.Item `gorm:"save_associations:false;"`
-// 	Cantidad  int     `gorm:"column:Cantidad;" json:"Cantidad"`
-// 	Precio    float64 `gorm:"column:Precio;" json:"Precio"`
-// }
-
 
 var VERSION = ""
 var db *gorm.DB
@@ -49,16 +31,11 @@ func Routes(r *httprouter.Router, version string) {
 	r.POST("/visitas", Insert)
 	r.PUT("/visitas/:id", Update)
 	r.DELETE("/visitas/:id", Delete)
-
-	// r.GET("/comandaitems/:id", ListItems)
 }
 
 func (Visita) TableName() string {
 	return "visitas"
 }
-// func (ComandaItem) TableName() string {
-// 	return "comanda_items"
-// }
 
 func List(w http.ResponseWriter, r *http.Request, ps httprouter.Params) {
 
@@ -66,13 +43,7 @@ func List(w http.ResponseWriter, r *http.Request, ps httprouter.Params) {
 	db := dbcfg.GetDB()
 
 	// Run the query
-	db.
-		// Preload("Items").
-		// Preload("Items.Item").
-		// Preload("Items.Item.Rubro").
-		// Preload("Items.Item.Marca").
-		// Where("Estado=0").
-		Find(&visitas)
+	db.Find(&visitas)
 
 	json, err := json.Marshal(&visitas)
 	if err != nil {
@@ -91,12 +62,7 @@ func ListOne(w http.ResponseWriter, r *http.Request, ps httprouter.Params) {
 	db := dbcfg.GetDB()
 
 	// Run the query
-	db.
-		// Preload("Items").
-		// Preload("Items.Item").
-		// Preload("Items.Item.Rubro").
-		// Preload("Items.Item.Marca").
-		First(&visita, uid)
+	db.First(&visita, uid)
 
 	json, err := json.Marshal(&visita)
 	if err != nil {
@@ -107,29 +73,6 @@ func ListOne(w http.ResponseWriter, r *http.Request, ps httprouter.Params) {
 	}
 	fmt.Fprint(w, string(json))
 }
-
-
-// func ListItems(w http.ResponseWriter, r *http.Request, ps httprouter.Params) {
-
-// 	items := []ComandaItem{}
-// 	id := ps.ByName("id")
-
-// 	db := dbcfg.GetDB()
-
-// 	// Run the query
-// 	db.
-// 		Where("ComandaID=" + id).
-// 		Find(&items)	
-
-// 	json, err := json.Marshal(&items)
-// 	if err != nil {
-// 		logger.Log.Println("Error al serializar items-comanda a json", err.Error())
-// 		json := `{"webapi": "gbp:items-comanda","version": "` + VERSION + `", "status": "error"}`
-// 		fmt.Fprint(w, json)
-// 		return
-// 	}
-// 	fmt.Fprint(w, string(json))
-// }
 
 func Insert(w http.ResponseWriter, r *http.Request, ps httprouter.Params) {
 	visita := Visita{}

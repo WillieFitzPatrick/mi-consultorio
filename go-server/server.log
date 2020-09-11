@@ -337,3 +337,19 @@ invalid character '}' looking for beginning of object key string
 2020/09/10 18:21:06 login.go:56: Los datos ingresados son incorrectos.
 2020/09/11 09:16:24 main.go:32: Listening on port:  8400
 2020/09/11 09:16:24 main.go:57: connected to sqlite database
+2020/09/11 09:19:08 main.go:32: Listening on port:  8400
+2020/09/11 09:19:08 main.go:57: connected to sqlite database
+2020/09/11 09:19:12 main.go:32: Listening on port:  8400
+2020/09/11 09:19:12 main.go:57: connected to sqlite database
+2020/09/11 09:19:17 main.go:32: Listening on port:  8400
+2020/09/11 09:19:17 main.go:57: connected to sqlite database
+2020/09/11 09:19:21 main.go:32: Listening on port:  8400
+2020/09/11 09:19:21 main.go:57: connected to sqlite database
+2020/09/11 09:19:28 main.go:32: Listening on port:  8400
+2020/09/11 09:19:28 main.go:57: connected to sqlite database
+2020/09/11 09:19:32 main.go:32: Listening on port:  8400
+2020/09/11 09:19:32 main.go:57: connected to sqlite database
+2020/09/11 09:19:40 main.go:32: Listening on port:  8400
+2020/09/11 09:19:40 main.go:57: connected to sqlite database
+2020/09/11 09:19:48 main.go:32: Listening on port:  8400
+2020/09/11 09:19:48 main.go:57: connected to sqlite database
