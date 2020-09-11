@@ -12,7 +12,6 @@ import (
 	"net/http"
 	"github.com/julienschmidt/httprouter"
 	// "github.com/rs/cors"
-
 	"github.com/jinzhu/gorm"
 	_ "github.com/jinzhu/gorm/dialects/sqlite"
 )
@@ -26,7 +25,8 @@ const (
 func main() {
 	fmt.Println("Starting server...")
 	port := "8400"
-	if os.Getenv("ASPNETCORE_PORT") != "" { // get enviroment variable that set by ACNM 
+	// get enviroment variable that set by ACNM 
+	if os.Getenv("ASPNETCORE_PORT") != "" { 
 		port = os.Getenv("ASPNETCORE_PORT")
 	}
 	logger.Log.Println("Listening on port: ", port)
@@ -64,7 +64,6 @@ func main() {
 	visita.Routes(router, VERSION)
 	login.Routes(router, VERSION)
 	dbcheck.Routes(router, VERSION)
-	// item.Routes(router, VERSION)
 
 	fmt.Println("server started !")
 	logger.Log.Fatal(http.ListenAndServe(":" + port, &Server{router}))
@@ -83,14 +82,6 @@ func (s *Server) ServeHTTP (w http.ResponseWriter, r *http.Request) {
 	s.r.ServeHTTP(w, r)
   }
 
-// func UpdateDB(w http.ResponseWriter, r *http.Request, ps httprouter.Params) {
-// 	logger.Log.Println("running migrations")
-// 	//db.AutoMigrate(&users.Usuario{})
-// 	logger.Log.Println("migrations finished")
-// 	json := `{"webapi":"mrt:bienes-patrimoniales","version":"` + VERSION + `", "status":"outdated"}`
-// 	fmt.Fprint(w, json)
-
-// }
 
 // MyNotFound shows a simple test message
 func MyNotFound(w http.ResponseWriter, r *http.Request) {
