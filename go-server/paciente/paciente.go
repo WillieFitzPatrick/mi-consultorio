@@ -38,16 +38,6 @@ type Paciente struct {
 
 }
 
-// type ComandaItem struct {
-// 	ID        uint    `gorm:"column:ID;primary_key;AUTO_INCREMENT" json:"ID"`
-// 	ComandaID uint    `gorm:"column:ComandaID;" json:"-"`
-// 	ItemID    int     `gorm:"column:ItemID;" json:"ItemID"`
-// 	Item	  item.Item `gorm:"save_associations:false;"`
-// 	Cantidad  int     `gorm:"column:Cantidad;" json:"Cantidad"`
-// 	Precio    float64 `gorm:"column:Precio;" json:"Precio"`
-// }
-
-
 var VERSION = ""
 var db *gorm.DB
 
@@ -119,29 +109,6 @@ func ListOne(w http.ResponseWriter, r *http.Request, ps httprouter.Params) {
 	}
 	fmt.Fprint(w, string(json))
 }
-
-
-// func ListItems(w http.ResponseWriter, r *http.Request, ps httprouter.Params) {
-
-// 	items := []ComandaItem{}
-// 	id := ps.ByName("id")
-
-// 	db := dbcfg.GetDB()
-
-// 	// Run the query
-// 	db.
-// 		Where("ComandaID=" + id).
-// 		Find(&items)	
-
-// 	json, err := json.Marshal(&items)
-// 	if err != nil {
-// 		logger.Log.Println("Error al serializar items-comanda a json", err.Error())
-// 		json := `{"webapi": "gbp:items-comanda","version": "` + VERSION + `", "status": "error"}`
-// 		fmt.Fprint(w, json)
-// 		return
-// 	}
-// 	fmt.Fprint(w, string(json))
-// }
 
 func Insert(w http.ResponseWriter, r *http.Request, ps httprouter.Params) {
 	paciente := Paciente{}
