@@ -75,8 +75,8 @@ type Server struct {
 }
 
 func (s *Server) ServeHTTP (w http.ResponseWriter, r *http.Request) {
-	// w.Header().Set("Access-Control-Allow-Origin", "http://localhost:4200")
-	w.Header().Set("Access-Control-Allow-Origin", "http://miconsultorio.swapps.com.ar")
+	w.Header().Set("Access-Control-Allow-Origin", "http://localhost:4200")
+	// w.Header().Set("Access-Control-Allow-Origin", "http://miconsultorio.swapps.com.ar")
 	w.Header().Set("Access-Control-Allow-Methods", "GET,POST,PUT,DELETE")
 	w.Header().Set("Access-Control-Allow-Credentials", "true")
 	w.Header().Set("Access-Control-Allow-Headers", "Accept, Content-Type, Content-Length, Accept-Encoding, X-CSRF-Token, Authorization, Access-Control-Allow-Origin, Access-Control-Allow-Credentials")

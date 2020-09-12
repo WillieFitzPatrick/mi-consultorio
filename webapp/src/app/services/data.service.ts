@@ -23,10 +23,12 @@ export class DataService {
    }
 
    savePaciente(data, id) {
+      console.log(data)
+      console.log(id)
       if (id === 0) {
         return this.http.post(this.globals.getUrl() + '/pacientes', JSON.stringify(data));
       } else {
-        return this.http.put( this.globals.getUrl() + '/pacientes/' + id, JSON.stringify(data));
+        return this.http.put(this.globals.getUrl() + '/pacientes/' + id, JSON.stringify(data));
       }
    }
 

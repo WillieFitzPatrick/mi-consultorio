@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  API_URL: 'http://localhost:8400',
+  API_URL: 'http://localhost:8400/server',
   // IMG_URL: './assets/',
   // DEFAULT_IMG: 'default-image.png',
 };

@@ -43,6 +43,7 @@ export class PacientesListComponent implements OnInit {
 
   nuevoPaciente(event) {
     this.selectedPaciente = Paciente(null)
+    this.status.isNew = true;
     this.status.isEditing = true;
     // this.scrollToTop();
 }

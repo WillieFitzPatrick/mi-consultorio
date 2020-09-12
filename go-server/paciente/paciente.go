@@ -142,14 +142,17 @@ func Update(w http.ResponseWriter, r *http.Request, ps httprouter.Params) {
 		http.Error(w, err.Error(), http.StatusBadRequest)
 		return
 	}
+
 	db := dbcfg.GetDB()
-	db.Debug().
-		First(&paciente)
 
-		paciente = updatedPaciente
+	id, _ :=  strconv.ParseUint(ps.ByName("id"),10,64)
+	uid := uint(id)
+	db.First(&paciente,uid)
 
-	db.Debug().
-		Save(&paciente)
+	paciente = updatedPaciente
+	paciente.ID = uid
+
+	db.Save(&paciente)
 
 	json, err := json.Marshal(&paciente)
 	if err != nil {
@@ -159,4 +162,5 @@ func Update(w http.ResponseWriter, r *http.Request, ps httprouter.Params) {
 		return
 	}
 	fmt.Fprint(w, string(json))
+
 }

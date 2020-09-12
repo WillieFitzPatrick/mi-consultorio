@@ -21,9 +21,9 @@ export class PacienteEditFormComponent implements OnInit {
   constructor( private ds: DataService) { }
 
   ngOnInit() {
-      this.formTitle = (this.paciente.ID) ? ' Editar paciente.' : 'Nuevo paceinte.';
+      this.formTitle = (this.isNew) ? 'Nuevo paciente.' : 'Editar paceinte.';
       this.createForm();
-      this.tiposdoc = ['DNI','LE','PAS']
+      this.tiposdoc = ['DNI','CI','LE','PAS']
       
       this.editForm.patchValue({
         Nombre: this.paciente.Nombre,
@@ -53,7 +53,7 @@ export class PacienteEditFormComponent implements OnInit {
 
   getErrorMessage( fld: string) {
     if (this.flget(fld).hasError('required')) {
-      return 'Debe ingresar una descripción';
+      return 'Debe ingresar : ' + fld;
     }
     if (this.flget(fld).hasError('maxlength')) {
       return 'Maximo 50 caracteres, actual ' + this.flget(fld).errors.maxlength.actualLength;
@@ -74,7 +74,7 @@ export class PacienteEditFormComponent implements OnInit {
       saveData.ObraSocial = this.flget('ObraSocial').value;
       saveData.NroAfiliado = this.flget('NroAfiliado').value;
       this.ds.savePaciente(saveData, (this.isNew) ? 0 : this.paciente.ID ).subscribe( (data) => {
-          alert('check for error before emiting close')
+          // alert('check for error before emiting close')
           const savedPaciente: IPaciente = data['paciente'];
           this.close.emit(savedPaciente); 
       },
