@@ -57,7 +57,7 @@ func main() {
 	logger.Log.Println("connected to sqlite database")
 
 	router := httprouter.New()
-	router.GET("/", TestMsg)
+	router.GET("/test", TestMsg)
 	router.NotFound = http.HandlerFunc( MyNotFound )
 
 	paciente.Routes(router, VERSION)
@@ -85,8 +85,8 @@ func (s *Server) ServeHTTP (w http.ResponseWriter, r *http.Request) {
 
 // MyNotFound shows a simple test message
 func MyNotFound(w http.ResponseWriter, r *http.Request) {
-	json := `{"status":"error","error":"404","description":"page not found"}`
-	logger.Log.Printf("Page not found")
+	logger.Log.Printf("Page not found:" + r.URL.RawQuery)
+	json := `{"status":"error", "error":"404","description": "page not found","url": ` + r.URL.RawQuery + `}`
 	fmt.Fprint(w, json)
 }
 

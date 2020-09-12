@@ -5,8 +5,8 @@
 export const environment = {
   production: false,
   API_URL: 'http://localhost:8400',
-  IMG_URL: './assets/',
-  DEFAULT_IMG: 'default-image.png',
+  // IMG_URL: './assets/',
+  // DEFAULT_IMG: 'default-image.png',
 };
 
 /*
