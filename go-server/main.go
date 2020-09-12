@@ -57,7 +57,7 @@ func main() {
 	logger.Log.Println("connected to sqlite database")
 
 	router := httprouter.New()
-	router.GET("/test", TestMsg)
+	router.GET("/server/test", TestMsg)
 	router.NotFound = http.HandlerFunc( MyNotFound )
 
 	paciente.Routes(router, VERSION)

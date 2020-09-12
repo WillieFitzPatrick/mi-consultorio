@@ -43,10 +43,10 @@ var db *gorm.DB
 
 func Routes(r *httprouter.Router, version string) {
 	VERSION = version
-	r.GET("/pacientes", List)
-	r.GET("/pacientes/:id", ListOne)
-	r.POST("/pacientes", Insert)
-	r.PUT("/pacientes/:id", Update)
+	r.GET("/server/pacientes", List)
+	r.GET("/server/pacientes/:id", ListOne)
+	r.POST("/server/pacientes", Insert)
+	r.PUT("/server/pacientes/:id", Update)
 }
 
 func (Paciente) TableName() string {

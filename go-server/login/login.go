@@ -31,7 +31,7 @@ var db *gorm.DB
 
 func Routes(r *httprouter.Router, version string) {
 	VERSION = version
-	r.POST("/login", doLogin)
+	r.POST("/server/login", doLogin)
 }
 
 func (Login) TableName() string {

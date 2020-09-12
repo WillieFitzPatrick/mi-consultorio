@@ -26,11 +26,11 @@ var db *gorm.DB
 
 func Routes(r *httprouter.Router, version string) {
 	VERSION = version
-	r.GET("/visitas", List)
-	r.GET("/visitas/:id", ListOne)
-	r.POST("/visitas", Insert)
-	r.PUT("/visitas/:id", Update)
-	r.DELETE("/visitas/:id", Delete)
+	r.GET("/server/visitas", List)
+	r.GET("/server/visitas/:id", ListOne)
+	r.POST("/server/visitas", Insert)
+	r.PUT("/server/visitas/:id", Update)
+	r.DELETE("/server/visitas/:id", Delete)
 }
 
 func (Visita) TableName() string {

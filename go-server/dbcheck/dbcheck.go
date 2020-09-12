@@ -17,7 +17,7 @@ var db *gorm.DB
 
 func Routes(r *httprouter.Router, version string) {
 	VERSION = version
-	r.GET("/dbcheck", dbCheck)
+	r.GET("/server/dbcheck", dbCheck)
 }
 
 func dbCheck(w http.ResponseWriter, r *http.Request, ps httprouter.Params) {
